@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InternLink</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F7F6F2;--surface:#FFFFFF;--surface2:#F0EEE8;
+  --text:#1A1916;--text2:#6B6860;--text3:#9E9C96;
+  --accent:#2D5BE3;--accent-light:#EEF2FD;--accent-dark:#1A3FA8;
+  --green:#1D9E75;--green-light:#E1F5EE;
+  --amber:#BA7517;--amber-light:#FAEEDA;
+  --red:#A32D2D;--red-light:#FCEBEB;
+  --border:#E4E2DC;--border2:#CCC9C0;
+  --radius:10px;--radius-lg:16px;--shadow:0 1px 3px rgba(0,0,0,0.08);
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.6}
+h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
+
+/* NAV */
+.nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-brand{font-family:'DM Serif Display',serif;font-size:22px;color:var(--accent);letter-spacing:-0.5px}
+.nav-brand span{color:var(--text)}
+.nav-tabs{display:flex;gap:4px}
+.nav-tab{padding:6px 16px;border-radius:var(--radius);font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text2);transition:all 0.15s}
+.nav-tab:hover{background:var(--surface2);color:var(--text)}
+.nav-tab.active{background:var(--accent);color:#fff}
+
+/* LAYOUT */
+.page{display:none;min-height:calc(100vh - 60px)}
+.page.active{display:block}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+.wide{max-width:1100px}
+
+/* HERO */
+.hero{text-align:center;padding:4rem 1.5rem 2rem;max-width:700px;margin:0 auto}
+.hero h1{font-size:42px;line-height:1.2;margin-bottom:1rem;color:var(--text)}
+.hero p{color:var(--text2);font-size:17px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:10px 24px;border-radius:var(--radius);font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.15s;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:6px}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-dark)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}.btn-outline:hover{background:var(--surface2)}
+.btn-sm{padding:6px 14px;font-size:13px}
+.btn-ghost{background:transparent;color:var(--accent);padding:0;font-size:14px;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.btn-ghost:hover{text-decoration:underline}
+.btn-danger{background:var(--red-light);color:var(--red);border:1px solid #F7C1C1}.btn-danger:hover{background:#F7C1C1}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow)}
+.card-sm{padding:1rem 1.25rem;border-radius:var(--radius)}
+
+/* FORMS */
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:13px;font-weight:500;color:var(--text2);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.4px}
+.form-input,.form-select,.form-textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);font-size:14px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);transition:border 0.15s;outline:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent)}
+.form-textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid transparent;transition:all 0.15s;user-select:none}
+.tag-default{background:var(--surface2);color:var(--text2);border-color:var(--border)}
+.tag-default:hover{border-color:var(--border2);color:var(--text)}
+.tag-selected{background:var(--accent-light);color:var(--accent);border-color:#BDCDF7}
+.tag-match{background:var(--green-light);color:var(--green);border-color:#9FE1CB}
+.tag-display{background:var(--surface2);color:var(--text2);cursor:default}
+
+/* CV UPLOAD */
+.upload-area{border:2px dashed var(--border2);border-radius:var(--radius);padding:2rem;text-align:center;cursor:pointer;transition:all 0.15s;background:var(--surface)}
+.upload-area:hover,.upload-area.drag{border-color:var(--accent);background:var(--accent-light)}
+.upload-area.has-file{border-color:var(--green);background:var(--green-light)}
+.upload-icon{font-size:36px;margin-bottom:8px}
+.upload-title{font-weight:500;color:var(--text);margin-bottom:4px}
+.upload-sub{font-size:13px;color:var(--text2)}
+.upload-warning{font-size:12px;color:var(--amber);margin-top:8px;font-weight:500}
+.upload-success{font-size:13px;color:var(--green);margin-top:8px;font-weight:500}
+.upload-input{display:none}
+
+/* INTERNSHIP CARDS */
+.internship-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;transition:all 0.2s;cursor:pointer;box-shadow:var(--shadow)}
+.internship-card:hover{border-color:var(--border2);transform:translateY(-1px)}
+.internship-card.matched{border-color:#BDCDF7;background:linear-gradient(135deg,var(--surface) 0%,var(--accent-light) 100%)}
+.internship-card .match-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;background:var(--accent);color:#fff;font-size:11px;font-weight:600;margin-bottom:8px}
+.internship-card.high-match{border-color:var(--accent);border-width:2px}
+.internship-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:650px){.internship-grid{grid-template-columns:1fr}}
+.company-name{font-size:12px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px}
+.internship-title{font-size:18px;font-family:'DM Serif Display',serif;margin-bottom:8px}
+.internship-desc{font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.5}
+
+/* STUDENT CARDS */
+.student-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;box-shadow:var(--shadow)}
+.student-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:650px){.student-grid{grid-template-columns:1fr}}
+.student-avatar{width:48px;height:48px;border-radius:50%;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:18px;font-family:'DM Serif Display',serif;flex-shrink:0}
+.student-header{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+.student-name{font-weight:500;font-size:16px}
+.student-meta{font-size:13px;color:var(--text2)}
+.info-row{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--text2);margin-bottom:4px}
+.info-row strong{color:var(--text);font-weight:500}
+
+/* FILTER BAR */
+.filter-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.5rem}
+.filter-title{font-size:13px;font-weight:500;color:var(--text2);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:8px}
+
+/* SECTION */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:gap}
+.section-title{font-size:22px}
+.badge{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:500}
+.badge-blue{background:var(--accent-light);color:var(--accent)}
+.badge-green{background:var(--green-light);color:var(--green)}
+
+/* MODAL */
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center;padding:1rem}
+.modal-backdrop.open{display:flex}
+.modal{background:var(--surface);border-radius:var(--radius-lg);max-width:600px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
+.modal-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--surface);z-index:1}
+.modal-header h2{font-size:20px}
+.modal-body{padding:1.5rem}
+.modal-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text2);padding:4px;line-height:1}
+.modal-close:hover{color:var(--text)}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:1.5rem 0}
+
+/* APPLY CONFIRM */
+.apply-success{text-align:center;padding:2rem}
+.apply-success .icon{font-size:48px;margin-bottom:1rem}
+
+/* TABS */
+.view-tabs{display:flex;gap:2px;background:var(--surface2);padding:4px;border-radius:var(--radius);width:fit-content;margin-bottom:1.5rem}
+.view-tab{padding:6px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text2);transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.view-tab.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+
+/* ALERT */
+.alert{padding:10px 14px;border-radius:var(--radius);font-size:13px;margin-bottom:1rem}
+.alert-info{background:var(--accent-light);color:var(--accent-dark);border:1px solid #BDCDF7}
+.alert-success{background:var(--green-light);color:var(--green);border:1px solid #9FE1CB}
+
+/* EMPTY STATE */
+.empty{text-align:center;padding:3rem 1rem;color:var(--text2)}
+.empty-icon{font-size:40px;margin-bottom:1rem;opacity:0.4}
+.empty h3{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;margin-bottom:4px;color:var(--text)}
+
+/* CV LINK */
+.cv-link{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--radius);background:var(--accent-light);color:var(--accent);font-size:13px;font-weight:500;cursor:pointer;border:1px solid #BDCDF7;transition:all 0.15s;text-decoration:none}
+.cv-link:hover{background:#DDE6FB}
+
+/* COUNT */
+.count-pill{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:20px;background:var(--accent);color:#fff;font-size:11px;font-weight:600}
+
+/* SORT NOTE */
+.sort-note{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:4px}
+
+/* PROGRESS */
+.step-dots{display:flex;gap:6px;justify-content:center;margin-bottom:2rem}
+.step-dot{width:8px;height:8px;border-radius:50%;background:var(--border2)}
+.step-dot.active{background:var(--accent);width:24px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">Intern<span>Link</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('home')">Home</button>
+    <button class="nav-tab" onclick="showPage('student')">Student</button>
+    <button class="nav-tab" onclick="showPage('company')">Company</button>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <h1>Find the internship that <em>fits</em></h1>
+    <p>InternLink connects students with engineering internship opportunities through intelligent skill matching.</p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" onclick="showPage('student')">I'm a Student →</button>
+      <button class="btn btn-outline" onclick="showPage('company')">I'm a Company →</button>
+    </div>
+  </div>
+  <div class="container" style="max-width:800px">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem">
+      <div class="card" style="text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🎓</div>
+        <div style="font-weight:500;margin-bottom:4px">Smart Matching</div>
+        <div style="font-size:13px;color:var(--text2)">Your skills matched to relevant internships automatically</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🏢</div>
+        <div style="font-weight:500;margin-bottom:4px">3 Live Postings</div>
+        <div style="font-size:13px;color:var(--text2)">Engineering roles across HVAC, materials & workshop</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">📄</div>
+        <div style="font-weight:500;margin-bottom:4px">CV Included</div>
+        <div style="font-size:13px;color:var(--text2)">Upload your PDF CV and let companies review it directly</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STUDENT PAGE -->
+<div id="page-student" class="page">
+  <div id="student-register" class="container" style="max-width:680px">
+    <div style="margin-bottom:2rem">
+      <h1 style="font-size:32px;margin-bottom:6px">Create your profile</h1>
+      <p style="color:var(--text2)">Set up your student profile to start matching with internships.</p>
+    </div>
+
+    <div class="card">
+      <div style="margin-bottom:1.5rem">
+        <div style="font-size:12px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:12px">Personal information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full name *</label>
+            <input class="form-input" id="s-name" type="text" placeholder="e.g. Ayşe Kaya">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email address *</label>
+            <input class="form-input" id="s-email" type="email" placeholder="ayse@university.edu">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Phone number</label>
+            <input class="form-input" id="s-phone" type="tel" placeholder="+90 555 000 0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">University *</label>
+            <input class="form-input" id="s-university" type="text" placeholder="e.g. İTÜ">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Department *</label>
+            <input class="form-input" id="s-dept" type="text" placeholder="e.g. Mechanical Engineering">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Year / Grade *</label>
+            <select class="form-select" id="s-year">
+              <option value="">Select year</option>
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+              <option>4th Year</option>
+              <option>Graduate</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div style="margin-bottom:1.5rem">
+        <div style="font-size:12px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px">Skills & tags</div>
+        <p style="font-size:13px;color:var(--text2);margin-bottom:12px">Select all that apply — these are used for internship matching.</p>
+        <div class="tags" id="skill-selector"></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="form-group">
+        <label class="form-label">Experience & projects</label>
+        <textarea class="form-textarea" id="s-experience" placeholder="Briefly describe any relevant experience, projects, or coursework..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">CV upload *</label>
+        <div class="upload-area" id="upload-area" onclick="document.getElementById('cv-file').click()">
+          <div class="upload-icon">📎</div>
+          <div class="upload-title">Click to upload your CV</div>
+          <div class="upload-sub">Drag & drop also works</div>
+          <div class="upload-warning">⚠ Please upload your CV only in .pdf format.</div>
+          <div id="upload-success" class="upload-success" style="display:none"></div>
+        </div>
+        <input type="file" id="cv-file" class="upload-input" accept=".pdf">
+      </div>
+
+      <div id="form-error" class="alert alert-info" style="display:none"></div>
+
+      <button class="btn btn-primary" onclick="registerStudent()" style="width:100%;justify-content:center;padding:12px">
+        Create profile & browse internships →
+      </button>
+    </div>
+  </div>
+
+  <!-- STUDENT DASHBOARD -->
+  <div id="student-dashboard" style="display:none">
+    <div class="container wide">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:8px">
+        <div>
+          <h1 style="font-size:28px;margin-bottom:2px" id="dash-welcome">Welcome back</h1>
+          <p style="color:var(--text2);font-size:14px">Here are internships matched to your skills.</p>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="editProfile()">Edit profile</button>
+      </div>
+
+      <div id="applied-alert" class="alert alert-success" style="display:none"></div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px">
+        <div class="sort-note">
+          <span>✦</span>
+          <span>Matched internships shown first. </span>
+          <span id="match-count-label"></span>
+        </div>
+      </div>
+
+      <div class="internship-grid" id="internship-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPANY PAGE -->
+<div id="page-company" class="page">
+  <div class="container wide">
+    <div style="margin-bottom:1.5rem">
+      <h1 style="font-size:28px;margin-bottom:4px">Company dashboard</h1>
+      <p style="color:var(--text2)">View and filter applicants for your internship postings.</p>
+    </div>
+
+    <div class="view-tabs">
+      <button class="view-tab active" onclick="setCompanyView('all')">All applicants</button>
+      <button class="view-tab" onclick="setCompanyView('hvac')">HVAC Intern</button>
+      <button class="view-tab" onclick="setCompanyView('workshop')">Workshop Intern</button>
+      <button class="view-tab" onclick="setCompanyView('materials')">Materials Intern</button>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-title">Filter by skill tags</div>
+      <div class="tags" id="company-filter-tags"></div>
+    </div>
+
+    <div id="company-applicants"></div>
+  </div>
+</div>
+
+<!-- INTERNSHIP MODAL -->
+<div class="modal-backdrop" id="internship-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">Internship details</h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- STUDENT DETAIL MODAL -->
+<div class="modal-backdrop" id="student-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="smodal-title">Applicant profile</h2>
+      <button class="modal-close" onclick="closeSModal()">✕</button>
+    </div>
+    <div class="modal-body" id="smodal-body"></div>
+  </div>
+</div>
+
+<script>
+const ALL_TAGS = ['teamwork','individual work','analysis','HVAC','mechanical engineering','materials','electrical','manufacturing','CAD','workshop','maintenance'];
+
+const INTERNSHIPS = [
+  {
+    id:'hvac',
+    title:'HVAC Intern',
+    company:'TechClimate Solutions',
+    tags:['HVAC','mechanical engineering','analysis'],
+    description:'Support HVAC system design, air conditioning systems, and technical documentation. Work alongside experienced engineers on real-world building projects.',
+    location:'Istanbul',
+    duration:'3 months',
+    applicants:[]
+  },
+  {
+    id:'workshop',
+    title:'System Workshop Intern',
+    company:'MechSystems A.Ş.',
+    tags:['mechanical engineering','electrical','teamwork','workshop'],
+    description:'Support assembly, maintenance, and testing processes in a workshop environment. Gain hands-on experience with industrial machinery and systems.',
+    location:'Ankara',
+    duration:'2–3 months',
+    applicants:[]
+  },
+  {
+    id:'materials',
+    title:'Materials Analysis Intern',
+    company:'LabCore Research',
+    tags:['materials','analysis','individual work'],
+    description:'Support material testing, reporting, and laboratory processes. Assist in sample preparation, data analysis, and documentation for ongoing research projects.',
+    location:'İzmir',
+    duration:'3 months',
+    applicants:[]
+  }
+];
+
+// Sample applicants pre-loaded
+const SAMPLE_STUDENTS = [
+  {id:'s0',name:'Mehmet Yılmaz',email:'mehmet@itu.edu.tr',phone:'+90 532 111 2233',university:'İTÜ',dept:'Mechanical Engineering',year:'3rd Year',tags:['HVAC','mechanical engineering','analysis','CAD'],experience:'Completed a CAD project on HVAC duct design. Part of the engineering society.',cvName:'mehmet_cv.pdf',cvData:null,appliedTo:['hvac']},
+  {id:'s1',name:'Zeynep Arslan',email:'zeynep@metu.edu.tr',phone:'+90 533 222 4455',university:'ODTÜ',dept:'Materials Science',year:'4th Year',tags:['materials','analysis','individual work','manufacturing'],experience:'Laboratory experience in material characterization. Published a short paper on composite analysis.',cvName:'zeynep_cv.pdf',cvData:null,appliedTo:['materials']},
+  {id:'s2',name:'Can Öztürk',email:'can@bilkent.edu.tr',phone:'+90 534 333 6677',university:'Bilkent',dept:'Electrical Engineering',year:'2nd Year',tags:['electrical','workshop','teamwork','maintenance'],experience:'Workshop assistant in university lab. Familiar with basic circuit testing and assembly.',cvName:'can_cv.pdf',cvData:null,appliedTo:['workshop']},
+  {id:'s3',name:'Elif Şahin',email:'elif@boun.edu.tr',phone:'+90 535 444 8899',university:'Boğaziçi',dept:'Mechanical Engineering',year:'3rd Year',tags:['mechanical engineering','HVAC','teamwork','workshop'],experience:'Internship at a local HVAC installer. Helped with on-site measurements and documentation.',cvName:'elif_cv.pdf',cvData:null,appliedTo:['hvac','workshop']}
+];
+
+// Load from storage or use samples
+let students = JSON.parse(localStorage.getItem('il_students') || 'null') || SAMPLE_STUDENTS;
+let currentStudent = JSON.parse(localStorage.getItem('il_current') || 'null');
+let cvFile = null;
+let companyView = 'all';
+let companyFilterTags = [];
+
+// Init sample applicants into internships
+function buildApplicantLists(){
+  INTERNSHIPS.forEach(i => {
+    i.applicants = students.filter(s => s.appliedTo && s.appliedTo.includes(i.id)).map(s => s.id);
+  });
+}
+
+function save(){
+  localStorage.setItem('il_students', JSON.stringify(students));
+  if(currentStudent) localStorage.setItem('il_current', JSON.stringify(currentStudent));
+}
+
+// PAGES
+function showPage(p){
+  document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  event && event.target && event.target.classList.add('active');
+  const tabs = document.querySelectorAll('.nav-tab');
+  const names = ['home','student','company'];
+  tabs.forEach((t,i) => {if(names[i]===p) t.classList.add('active')});
+  if(p==='student') initStudentPage();
+  if(p==='company') initCompanyPage();
+}
+
+// STUDENT INIT
+function initStudentPage(){
+  buildSkillSelector();
+  if(currentStudent){
+    showDashboard();
+  } else {
+    document.getElementById('student-register').style.display='';
+    document.getElementById('student-dashboard').style.display='none';
+  }
+}
+
+function buildSkillSelector(){
+  const el = document.getElementById('skill-selector');
+  if(!el) return;
+  el.innerHTML = '';
+  ALL_TAGS.forEach(tag => {
+    const t = document.createElement('span');
+    t.className='tag tag-default';
+    t.textContent=tag;
+    t.dataset.tag=tag;
+    t.onclick=()=>{
+      t.classList.toggle('tag-default');
+      t.classList.toggle('tag-selected');
+    };
+    el.appendChild(t);
+  });
+}
+
+function getSelectedTags(){
+  return [...document.querySelectorAll('#skill-selector .tag-selected')].map(t => t.dataset.tag);
+}
+
+// CV UPLOAD
+document.addEventListener('DOMContentLoaded', ()=>{
+  const inp = document.getElementById('cv-file');
+  const area = document.getElementById('upload-area');
+  if(inp) inp.addEventListener('change', handleFile);
+  if(area){
+    area.addEventListener('dragover', e => {e.preventDefault(); area.classList.add('drag');});
+    area.addEventListener('dragleave', () => area.classList.remove('drag'));
+    area.addEventListener('drop', e => {
+      e.preventDefault(); area.classList.remove('drag');
+      const f = e.dataTransfer.files[0];
+      if(f) processFile(f);
+    });
+  }
+  buildSkillSelector();
+  buildCompanyFilterTags();
+  buildApplicantLists();
+  if(currentStudent) showDashboard();
+});
+
+function handleFile(e){
+  const f = e.target.files[0];
+  if(f) processFile(f);
+}
+
+function processFile(f){
+  const area = document.getElementById('upload-area');
+  const suc = document.getElementById('upload-success');
+  if(!f.name.toLowerCase().endsWith('.pdf')){
+    suc.style.display='block';
+    suc.style.color='var(--red)';
+    suc.textContent='✕ Only .pdf files are accepted. Please re-upload.';
+    area.classList.remove('has-file');
+    cvFile = null;
+    return;
+  }
+  cvFile = f;
+  area.classList.add('has-file');
+  suc.style.display='block';
+  suc.style.color='var(--green)';
+  suc.textContent='✓ '+f.name+' uploaded successfully';
+}
+
+// REGISTER
+function registerStudent(){
+  const name = document.getElementById('s-name').value.trim();
+  const email = document.getElementById('s-email').value.trim();
+  const phone = document.getElementById('s-phone').value.trim();
+  const uni = document.getElementById('s-university').value.trim();
+  const dept = document.getElementById('s-dept').value.trim();
+  const year = document.getElementById('s-year').value;
+  const tags = getSelectedTags();
+  const exp = document.getElementById('s-experience').value.trim();
+  const err = document.getElementById('form-error');
+
+  if(!name||!email||!uni||!dept||!year){
+    err.style.display='';
+    err.textContent='Please fill in all required fields (name, email, university, department, year).';
+    return;
+  }
+  if(tags.length===0){
+    err.style.display='';
+    err.textContent='Please select at least one skill tag.';
+    return;
+  }
+  if(!cvFile){
+    err.style.display='';
+    err.textContent='Please upload your CV in .pdf format.';
+    return;
+  }
+
+  err.style.display='none';
+
+  const reader = new FileReader();
+  reader.onload = function(e){
+    const student = {
+      id: 'u'+Date.now(),
+      name, email, phone, university:uni, dept, year, tags, experience:exp,
+      cvName: cvFile.name,
+      cvData: e.target.result,
+      appliedTo: []
+    };
+    students.push(student);
+    currentStudent = student;
+    save();
+    buildApplicantLists();
+    showDashboard();
+  };
+  reader.readAsDataURL(cvFile);
+}
+
+function editProfile(){
+  currentStudent = null;
+  localStorage.removeItem('il_current');
+  document.getElementById('student-dashboard').style.display='none';
+  document.getElementById('student-register').style.display='';
+  buildSkillSelector();
+  cvFile = null;
+  document.getElementById('cv-file').value='';
+  document.getElementById('upload-success').style.display='none';
+  document.getElementById('upload-area').classList.remove('has-file');
+}
+
+// DASHBOARD
+function showDashboard(){
+  document.getElementById('student-register').style.display='none';
+  const dash = document.getElementById('student-dashboard');
+  dash.style.display='';
+  document.getElementById('dash-welcome').textContent='Welcome, '+currentStudent.name.split(' ')[0]+'!';
+  renderInternships();
+}
+
+function calcMatch(internship){
+  if(!currentStudent) return 0;
+  const common = internship.tags.filter(t => currentStudent.tags.includes(t));
+  return common.length;
+}
+
+function renderInternships(){
+  const list = document.getElementById('internship-list');
+  const sorted = [...INTERNSHIPS].sort((a,b) => calcMatch(b)-calcMatch(a));
+  const matchCount = sorted.filter(i => calcMatch(i)>0).length;
+  document.getElementById('match-count-label').textContent = matchCount + ' of 3 match your skills.';
+  list.innerHTML = '';
+  sorted.forEach(intern => {
+    const m = calcMatch(intern);
+    const applied = currentStudent.appliedTo && currentStudent.appliedTo.includes(intern.id);
+    const card = document.createElement('div');
+    card.className = 'internship-card'+(m>0?' matched':'')+(m===intern.tags.length?' high-match':'');
+    card.onclick = () => openInternshipModal(intern);
+    card.innerHTML = `
+      ${m>0?`<div class="match-badge">⚡ ${m}/${intern.tags.length} tags match</div>`:''}
+      <div class="company-name">${intern.company}</div>
+      <div class="internship-title">${intern.title}</div>
+      <div class="internship-desc">${intern.description}</div>
+      <div class="tags" style="margin-bottom:12px">
+        ${intern.tags.map(t => `<span class="tag ${currentStudent.tags.includes(t)?'tag-match':'tag-display'}">${t}</span>`).join('')}
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+        <div style="font-size:12px;color:var(--text3)">📍 ${intern.location} · ⏱ ${intern.duration}</div>
+        ${applied?'<span class="badge badge-green">✓ Applied</span>':'<span style="font-size:12px;color:var(--accent);font-weight:500">Click to view →</span>'}
+      </div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+// INTERNSHIP MODAL
+function openInternshipModal(intern){
+  const applied = currentStudent && currentStudent.appliedTo && currentStudent.appliedTo.includes(intern.id);
+  const m = currentStudent ? calcMatch(intern) : 0;
+  document.getElementById('modal-title').textContent = intern.title;
+  document.getElementById('modal-body').innerHTML = `
+    <p style="font-size:13px;color:var(--text3);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px">${intern.company}</p>
+    <p style="color:var(--text2);margin-bottom:1rem">${intern.description}</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem">
+      <div class="card card-sm"><div style="font-size:12px;color:var(--text3)">Location</div><div style="font-weight:500">${intern.location}</div></div>
+      <div class="card card-sm"><div style="font-size:12px;color:var(--text3)">Duration</div><div style="font-weight:500">${intern.duration}</div></div>
+    </div>
+    <div style="margin-bottom:1.5rem">
+      <div class="form-label">Required skills</div>
+      <div class="tags">
+        ${intern.tags.map(t => `<span class="tag ${currentStudent && currentStudent.tags.includes(t)?'tag-match':'tag-default'}">${t}${currentStudent && currentStudent.tags.includes(t)?' ✓':''}</span>`).join('')}
+      </div>
+      ${m>0?`<p style="font-size:13px;color:var(--green);margin-top:8px">You match ${m} of ${intern.tags.length} required skills.</p>`:''}
+    </div>
+    ${applied?
+      `<div class="alert alert-success" style="text-align:center">✓ You have already applied to this internship.</div>`:
+      `<button class="btn btn-primary" onclick="applyToInternship('${intern.id}')" style="width:100%;justify-content:center">Apply now →</button>`
+    }
+  `;
+  document.getElementById('internship-modal').classList.add('open');
+}
+
+function closeModal(){
+  document.getElementById('internship-modal').classList.remove('open');
+}
+
+function applyToInternship(internId){
+  if(!currentStudent) return;
+  if(!currentStudent.appliedTo) currentStudent.appliedTo=[];
+  if(!currentStudent.appliedTo.includes(internId)){
+    currentStudent.appliedTo.push(internId);
+    // Also update in students array
+    const idx = students.findIndex(s => s.id===currentStudent.id);
+    if(idx>-1) students[idx] = currentStudent;
+    save();
+    buildApplicantLists();
+  }
+  closeModal();
+  const alert = document.getElementById('applied-alert');
+  const intern = INTERNSHIPS.find(i => i.id===internId);
+  alert.textContent = '✓ Application sent for "'+intern.title+'"! The company will review your profile.';
+  alert.style.display='';
+  setTimeout(()=>alert.style.display='none', 4000);
+  renderInternships();
+}
+
+// COMPANY PAGE
+function initCompanyPage(){
+  buildCompanyFilterTags();
+  renderApplicants();
+}
+
+function buildCompanyFilterTags(){
+  const el = document.getElementById('company-filter-tags');
+  if(!el) return;
+  el.innerHTML='';
+  ALL_TAGS.forEach(tag => {
+    const t = document.createElement('span');
+    t.className='tag tag-default';
+    t.textContent=tag;
+    t.dataset.tag=tag;
+    t.onclick=()=>{
+      const active = companyFilterTags.includes(tag);
+      if(active){
+        companyFilterTags = companyFilterTags.filter(x => x!==tag);
+        t.classList.remove('tag-selected');
+        t.classList.add('tag-default');
+      } else {
+        companyFilterTags.push(tag);
+        t.classList.remove('tag-default');
+        t.classList.add('tag-selected');
+      }
+      renderApplicants();
+    };
+    el.appendChild(t);
+  });
+}
+
+function setCompanyView(v){
+  companyView = v;
+  document.querySelectorAll('.view-tab').forEach(t => t.classList.remove('active'));
+  event && event.target && event.target.classList.add('active');
+  renderApplicants();
+}
+
+function renderApplicants(){
+  const container = document.getElementById('company-applicants');
+  if(!container) return;
+  buildApplicantLists();
+
+  let list = students.filter(s => s.appliedTo && s.appliedTo.length>0);
+
+  if(companyView!=='all'){
+    list = list.filter(s => s.appliedTo.includes(companyView));
+  }
+
+  if(companyFilterTags.length>0){
+    list = list.filter(s => companyFilterTags.every(ft => s.tags.includes(ft)));
+  }
+
+  if(list.length===0){
+    container.innerHTML=`<div class="empty"><div class="empty-icon">🔍</div><h3>No applicants found</h3><p>Try adjusting your filters.</p></div>`;
+    return;
+  }
+
+  container.innerHTML=`<div style="margin-bottom:12px;font-size:13px;color:var(--text2)">${list.length} applicant${list.length!==1?'s':''} found</div><div class="student-grid" id="student-grid"></div>`;
+  const grid = document.getElementById('student-grid');
+  list.forEach(student => {
+    const card = document.createElement('div');
+    card.className='student-card';
+    const initials = student.name.split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
+    const apps = INTERNSHIPS.filter(i => student.appliedTo && student.appliedTo.includes(i.id));
+    card.innerHTML=`
+      <div class="student-header">
+        <div class="student-avatar">${initials}</div>
+        <div>
+          <div class="student-name">${student.name}</div>
+          <div class="student-meta">${student.university} · ${student.dept}</div>
+        </div>
+      </div>
+      <div class="info-row"><strong>Year:</strong> ${student.year}</div>
+      <div class="info-row" style="margin-bottom:8px"><strong>Applied to:</strong> ${apps.map(a=>`<span class="badge badge-blue" style="margin-left:4px">${a.title}</span>`).join('')}</div>
+      <div class="tags" style="margin-bottom:12px">
+        ${student.tags.map(t=>`<span class="tag tag-display">${t}</span>`).join('')}
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-outline btn-sm" onclick="viewStudent('${student.id}')">View profile →</button>
+        ${student.cvData?`<button class="btn btn-sm" style="background:var(--accent-light);color:var(--accent);border:1px solid #BDCDF7" onclick="downloadCV('${student.id}')">📄 Download CV</button>`:'<span style="font-size:12px;color:var(--text3)">No CV</span>'}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function viewStudent(id){
+  const s = students.find(x => x.id===id);
+  if(!s) return;
+  const initials = s.name.split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
+  const apps = INTERNSHIPS.filter(i => s.appliedTo && s.appliedTo.includes(i.id));
+  document.getElementById('smodal-title').textContent = s.name;
+  document.getElementById('smodal-body').innerHTML=`
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:1.5rem">
+      <div class="student-avatar" style="width:56px;height:56px;font-size:22px">${initials}</div>
+      <div>
+        <div style="font-size:20px;font-weight:500">${s.name}</div>
+        <div style="color:var(--text2);font-size:14px">${s.university} · ${s.dept} · ${s.year}</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div style="margin-bottom:1rem">
+      <div class="info-row"><span style="width:80px;color:var(--text3)">Email</span><strong>${s.email}</strong></div>
+      <div class="info-row"><span style="width:80px;color:var(--text3)">Phone</span><strong>${s.phone||'—'}</strong></div>
+    </div>
+    <div style="margin-bottom:1rem">
+      <div class="form-label">Applied to</div>
+      <div class="tags">${apps.map(a=>`<span class="badge badge-blue">${a.title}</span>`).join('')}</div>
+    </div>
+    <div style="margin-bottom:1rem">
+      <div class="form-label">Skills</div>
+      <div class="tags">${s.tags.map(t=>`<span class="tag tag-selected">${t}</span>`).join('')}</div>
+    </div>
+    ${s.experience?`<div style="margin-bottom:1rem"><div class="form-label">Experience & projects</div><p style="font-size:14px;color:var(--text2);line-height:1.6">${s.experience}</p></div>`:''}
+    <div class="divider"></div>
+    <div>
+      <div class="form-label">CV</div>
+      ${s.cvData?`<button class="cv-link" onclick="downloadCV('${s.id}')">📄 ${s.cvName} — Download</button>`:'<span style="color:var(--text3);font-size:13px">No CV uploaded</span>'}
+    </div>
+  `;
+  document.getElementById('student-modal').classList.add('open');
+}
+
+function closeSModal(){
+  document.getElementById('student-modal').classList.remove('open');
+}
+
+function downloadCV(id){
+  const s = students.find(x => x.id===id);
+  if(!s || !s.cvData) return;
+  const a = document.createElement('a');
+  a.href = s.cvData;
+  a.download = s.cvName;
+  a.click();
+}
+
+// Close modals on backdrop click
+document.getElementById('internship-modal').addEventListener('click', function(e){if(e.target===this) closeModal();});
+document.getElementById('student-modal').addEventListener('click', function(e){if(e.target===this) closeSModal();});
+</script>
+</body>
+</html>
