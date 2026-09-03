@@ -1,0 +1,2603 @@
+{
+ "eks": [
+  "Yazılım & Araç",
+  "Teknik Yetkinlik",
+  "Transversal"
+ ],
+ "y": [
+  {
+   "n": "Tasarım & Modelleme",
+   "t": [
+    [
+     "Y-001",
+     "SolidWorks",
+     "",
+     "SW; Solid Works",
+     0
+    ],
+    [
+     "Y-002",
+     "CATIA V5",
+     "",
+     "Catia",
+     0
+    ],
+    [
+     "Y-003",
+     "Siemens NX",
+     "",
+     "NX; Unigraphics",
+     0
+    ],
+    [
+     "Y-004",
+     "PTC Creo",
+     "",
+     "Creo; Pro/ENGINEER",
+     0
+    ],
+    [
+     "Y-005",
+     "Autodesk Inventor",
+     "",
+     "Inventor",
+     0
+    ],
+    [
+     "Y-006",
+     "Fusion 360",
+     "",
+     "Autodesk Fusion",
+     0
+    ],
+    [
+     "Y-007",
+     "AutoCAD",
+     "",
+     "Auto CAD",
+     0
+    ],
+    [
+     "Y-008",
+     "Rhinoceros 3D",
+     "",
+     "Rhino; Rhino3D",
+     0
+    ],
+    [
+     "Y-009",
+     "Grasshopper",
+     "",
+     "parametrik tasarım",
+     0
+    ],
+    [
+     "Y-010",
+     "Blender",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-011",
+     "KeyShot",
+     "",
+     "render",
+     0
+    ],
+    [
+     "Y-012",
+     "SketchUp",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-123",
+     "Teknik resim",
+     "Technical drawing",
+     "imalat resmi",
+     1
+    ],
+    [
+     "Y-124",
+     "GD&T / toleranslandırma",
+     "GD&T",
+     "geometrik toleranslar",
+     1
+    ],
+    [
+     "Y-125",
+     "Parametrik modelleme",
+     "Parametric modeling",
+     "",
+     1
+    ],
+    [
+     "Y-126",
+     "Yüzey modelleme",
+     "Surface modeling",
+     "surface",
+     1
+    ],
+    [
+     "Y-127",
+     "Montaj tasarımı",
+     "Assembly design",
+     "sac metal; kaynaklı konstrüksiyon",
+     1
+    ],
+    [
+     "Y-128",
+     "Tersine mühendislik",
+     "Reverse engineering",
+     "3D tarama",
+     1
+    ],
+    [
+     "Y-249",
+     "Ürün tasarım süreci",
+     "Product design process",
+     "konsept geliştirme",
+     1
+    ],
+    [
+     "Y-250",
+     "Eskiz & çizim",
+     "Sketching",
+     "el çizimi",
+     1
+    ],
+    [
+     "Y-251",
+     "Maket & prototipleme",
+     "Model making & prototyping",
+     "prototip",
+     1
+    ],
+    [
+     "Y-252",
+     "CMF (renk-malzeme-yüzey)",
+     "Color, material & finish",
+     "CMF",
+     1
+    ],
+    [
+     "Y-253",
+     "Kullanıcı araştırması",
+     "User research",
+     "kullanıcı görüşmesi",
+     1
+    ],
+    [
+     "Y-254",
+     "Ambalaj tasarımı",
+     "Packaging design",
+     "ambalaj",
+     1
+    ],
+    [
+     "Y-255",
+     "Mobilya & iç mekân tasarımı",
+     "Furniture & interior design",
+     "iç mimari",
+     1
+    ],
+    [
+     "Y-256",
+     "Sürdürülebilir tasarım",
+     "Sustainable design",
+     "eko tasarım; döngüsel",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Simülasyon & Analiz",
+   "t": [
+    [
+     "Y-013",
+     "ANSYS Mechanical",
+     "",
+     "Ansys; ANSYS Workbench",
+     0
+    ],
+    [
+     "Y-014",
+     "Abaqus",
+     "",
+     "Simulia",
+     0
+    ],
+    [
+     "Y-015",
+     "Altair HyperMesh",
+     "",
+     "HyperMesh; OptiStruct",
+     0
+    ],
+    [
+     "Y-016",
+     "LS-DYNA",
+     "",
+     "LSDYNA",
+     0
+    ],
+    [
+     "Y-017",
+     "MSC Nastran",
+     "",
+     "Nastran; Patran",
+     0
+    ],
+    [
+     "Y-018",
+     "ANSYS Fluent",
+     "",
+     "Fluent; CFX",
+     0
+    ],
+    [
+     "Y-019",
+     "Star-CCM+",
+     "Simcenter STAR-CCM+",
+     "StarCCM",
+     0
+    ],
+    [
+     "Y-020",
+     "OpenFOAM",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-021",
+     "COMSOL Multiphysics",
+     "",
+     "Comsol",
+     0
+    ],
+    [
+     "Y-022",
+     "Adams / MBD",
+     "MSC Adams",
+     "çok cisimli dinamik",
+     0
+    ],
+    [
+     "Y-129",
+     "Yapısal analiz (FEA)",
+     "Structural analysis (FEA)",
+     "sonlu elemanlar",
+     1
+    ],
+    [
+     "Y-130",
+     "Modal & titreşim analizi",
+     "Modal & vibration analysis",
+     "NVH",
+     1
+    ],
+    [
+     "Y-131",
+     "Yorulma analizi",
+     "Fatigue analysis",
+     "",
+     1
+    ],
+    [
+     "Y-132",
+     "Topoloji optimizasyonu",
+     "Topology optimization",
+     "hafifletme",
+     1
+    ],
+    [
+     "Y-133",
+     "Akışkanlar dinamiği (CFD)",
+     "Computational fluid dynamics",
+     "CFD",
+     1
+    ],
+    [
+     "Y-134",
+     "Isıl analiz",
+     "Thermal analysis",
+     "termal simülasyon",
+     1
+    ],
+    [
+     "Y-135",
+     "Çarpışma & crash analizi",
+     "Crash analysis",
+     "",
+     1
+    ],
+    [
+     "Y-090",
+     "Optimizasyon çözücüsü",
+     "Optimization solver",
+     "Gurobi; CPLEX; OR-Tools",
+     0
+    ],
+    [
+     "Y-091",
+     "Arena",
+     "Rockwell Arena",
+     "simülasyon",
+     0
+    ],
+    [
+     "Y-092",
+     "FlexSim / Simio",
+     "",
+     "üretim simülasyonu",
+     0
+    ],
+    [
+     "Y-093",
+     "AnyLogic",
+     "",
+     "",
+     0
+    ]
+   ]
+  },
+  {
+   "n": "Üretim, İmalat & Malzeme",
+   "t": [
+    [
+     "Y-084",
+     "Aspen Plus",
+     "",
+     "Aspen",
+     0
+    ],
+    [
+     "Y-085",
+     "Aspen HYSYS",
+     "",
+     "HYSYS",
+     0
+    ],
+    [
+     "Y-086",
+     "EES / CoolProp",
+     "",
+     "termodinamik yazılımı",
+     0
+    ],
+    [
+     "Y-087",
+     "Carrier HAP",
+     "",
+     "yük hesabı yazılımı",
+     0
+    ],
+    [
+     "Y-088",
+     "Malzeme karakterizasyonu",
+     "Material characterization",
+     "SEM; XRD; DSC; TGA",
+     0
+    ],
+    [
+     "Y-089",
+     "Laboratuvar analiz cihazları",
+     "Laboratory instrumentation",
+     "HPLC; GC; spektrofotometre",
+     0
+    ],
+    [
+     "Y-187",
+     "Proses tasarımı",
+     "Process design",
+     "akım şeması; PFD",
+     1
+    ],
+    [
+     "Y-188",
+     "Reaksiyon mühendisliği",
+     "Reaction engineering",
+     "",
+     1
+    ],
+    [
+     "Y-189",
+     "Ayırma işlemleri",
+     "Separation processes",
+     "distilasyon",
+     1
+    ],
+    [
+     "Y-190",
+     "Polimer & kompozit malzemeler",
+     "Polymers & composites",
+     "",
+     1
+    ],
+    [
+     "Y-191",
+     "Malzeme seçimi",
+     "Material selection",
+     "",
+     1
+    ],
+    [
+     "Y-192",
+     "Korozyon & malzeme bozunması",
+     "Corrosion",
+     "",
+     1
+    ],
+    [
+     "Y-193",
+     "GMP & farmasötik üretim",
+     "GMP",
+     "iyi üretim uygulamaları",
+     1
+    ],
+    [
+     "Y-194",
+     "Gıda güvenliği (HACCP)",
+     "Food safety (HACCP)",
+     "HACCP; ISO 22000",
+     1
+    ],
+    [
+     "Y-136",
+     "Talaşlı imalat",
+     "Machining",
+     "tornalama; frezeleme",
+     1
+    ],
+    [
+     "Y-137",
+     "Sac metal imalatı",
+     "Sheet metal fabrication",
+     "büküm; lazer kesim",
+     1
+    ],
+    [
+     "Y-138",
+     "Döküm",
+     "Casting",
+     "enjeksiyon döküm",
+     1
+    ],
+    [
+     "Y-139",
+     "Plastik enjeksiyon",
+     "Injection molding",
+     "kalıp tasarımı",
+     1
+    ],
+    [
+     "Y-140",
+     "Kaynak teknolojileri",
+     "Welding technologies",
+     "MIG; TIG; kaynak",
+     1
+    ],
+    [
+     "Y-141",
+     "Kompozit üretimi",
+     "Composite manufacturing",
+     "CFRP; kompozit",
+     1
+    ],
+    [
+     "Y-142",
+     "Isıl işlem",
+     "Heat treatment",
+     "sertleştirme",
+     1
+    ],
+    [
+     "Y-143",
+     "Yüzey işlem & kaplama",
+     "Surface treatment & coating",
+     "eloksal; galvaniz; boya",
+     1
+    ],
+    [
+     "Y-144",
+     "Üretim için tasarım (DFM/DFA)",
+     "Design for manufacturing",
+     "DFM; DFA",
+     1
+    ],
+    [
+     "Y-145",
+     "Montaj hattı & iş istasyonu",
+     "Assembly line design",
+     "hat dengeleme",
+     1
+    ],
+    [
+     "Y-023",
+     "Mastercam",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-024",
+     "NX CAM",
+     "",
+     "CAM programlama",
+     0
+    ],
+    [
+     "Y-025",
+     "CNC tezgâh programlama",
+     "CNC programming",
+     "G kodu; G-code",
+     0
+    ],
+    [
+     "Y-026",
+     "3D baskı / eklemeli imalat",
+     "Additive manufacturing",
+     "3D printing; FDM; SLA",
+     0
+    ],
+    [
+     "Y-027",
+     "Teamcenter",
+     "Siemens Teamcenter",
+     "PLM",
+     0
+    ],
+    [
+     "Y-028",
+     "Windchill",
+     "PTC Windchill",
+     "PLM",
+     0
+    ]
+   ]
+  },
+  {
+   "n": "Kalite, Süreç & Operasyon",
+   "t": [
+    [
+     "Y-146",
+     "FMEA",
+     "",
+     "DFMEA; PFMEA; hata türü etkileri",
+     1
+    ],
+    [
+     "Y-147",
+     "8D problem çözme",
+     "8D problem solving",
+     "8D",
+     1
+    ],
+    [
+     "Y-148",
+     "İstatistiksel proses kontrol",
+     "Statistical process control",
+     "SPC",
+     1
+    ],
+    [
+     "Y-149",
+     "Kök neden analizi",
+     "Root cause analysis",
+     "RCA; balık kılçığı; 5 neden",
+     1
+    ],
+    [
+     "Y-150",
+     "Yalın üretim",
+     "Lean manufacturing",
+     "yalın; 5S; kaizen",
+     1
+    ],
+    [
+     "Y-151",
+     "Altı Sigma",
+     "Six Sigma",
+     "6 sigma; DMAIC; yeşil kuşak",
+     1
+    ],
+    [
+     "Y-152",
+     "ISO 9001 kalite yönetimi",
+     "ISO 9001",
+     "kalite yönetim sistemi",
+     1
+    ],
+    [
+     "Y-153",
+     "Ölçüm & metroloji",
+     "Metrology",
+     "CMM; kalibrasyon",
+     1
+    ],
+    [
+     "Y-154",
+     "Test & doğrulama",
+     "Testing & validation",
+     "DAQ; veri toplama; deney düzeneği",
+     1
+    ],
+    [
+     "Y-155",
+     "Deney tasarımı (DOE)",
+     "Design of experiments",
+     "DOE",
+     1
+    ],
+    [
+     "Y-195",
+     "Yöneylem araştırması",
+     "Operations research",
+     "OR; doğrusal programlama",
+     1
+    ],
+    [
+     "Y-196",
+     "Üretim planlama",
+     "Production planning",
+     "MRP; MPS; çizelgeleme",
+     1
+    ],
+    [
+     "Y-197",
+     "Kapasite planlama",
+     "Capacity planning",
+     "",
+     1
+    ],
+    [
+     "Y-198",
+     "İş etüdü & zaman etüdü",
+     "Work & time study",
+     "metot etüdü",
+     1
+    ],
+    [
+     "Y-199",
+     "Simülasyon modelleme",
+     "Simulation modeling",
+     "kesikli olay simülasyonu",
+     1
+    ],
+    [
+     "Y-200",
+     "Ergonomi",
+     "Ergonomics",
+     "insan faktörleri",
+     1
+    ],
+    [
+     "Y-201",
+     "Karar analizi",
+     "Decision analysis",
+     "AHP; çok kriterli karar",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Enerji, Isı & Akışkanlar",
+   "t": [
+    [
+     "Y-156",
+     "Isı transferi",
+     "Heat transfer",
+     "",
+     1
+    ],
+    [
+     "Y-157",
+     "Termodinamik",
+     "Thermodynamics",
+     "",
+     1
+    ],
+    [
+     "Y-158",
+     "HVAC & iklimlendirme",
+     "HVAC",
+     "havalandırma; soğutma",
+     1
+    ],
+    [
+     "Y-159",
+     "Soğutma çevrimleri",
+     "Refrigeration cycles",
+     "soğutucu akışkan",
+     1
+    ],
+    [
+     "Y-160",
+     "Yenilenebilir enerji sistemleri",
+     "Renewable energy systems",
+     "güneş; rüzgâr",
+     1
+    ],
+    [
+     "Y-161",
+     "Enerji verimliliği & etüt",
+     "Energy efficiency audit",
+     "enerji etüdü",
+     1
+    ],
+    [
+     "Y-162",
+     "Yanma & motor teknolojileri",
+     "Combustion & engines",
+     "ICE",
+     1
+    ],
+    [
+     "Y-163",
+     "Akustik & gürültü kontrolü",
+     "Acoustics & noise control",
+     "ses yalıtımı",
+     1
+    ],
+    [
+     "Y-164",
+     "Pompa, fan & boru tesisatı",
+     "Pumps, fans & piping",
+     "hidrolik hesap",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Yapı & İnşaat",
+   "t": [
+    [
+     "Y-165",
+     "Yapı statiği",
+     "Structural engineering",
+     "statik hesap",
+     1
+    ],
+    [
+     "Y-166",
+     "Betonarme tasarım",
+     "Reinforced concrete design",
+     "betonarme",
+     1
+    ],
+    [
+     "Y-167",
+     "Çelik yapı tasarımı",
+     "Steel structure design",
+     "çelik konstrüksiyon",
+     1
+    ],
+    [
+     "Y-168",
+     "Deprem mühendisliği",
+     "Earthquake engineering",
+     "sismik tasarım",
+     1
+    ],
+    [
+     "Y-169",
+     "Geoteknik & zemin etüdü",
+     "Geotechnical engineering",
+     "zemin mekaniği",
+     1
+    ],
+    [
+     "Y-170",
+     "BIM koordinasyonu",
+     "BIM coordination",
+     "yapı bilgi modellemesi",
+     1
+    ],
+    [
+     "Y-171",
+     "Metraj & keşif",
+     "Quantity surveying",
+     "hakediş; maliyet keşfi",
+     1
+    ],
+    [
+     "Y-172",
+     "Şantiye yönetimi",
+     "Site management",
+     "şantiye şefliği",
+     1
+    ],
+    [
+     "Y-173",
+     "İş sağlığı ve güvenliği",
+     "Occupational health & safety",
+     "ISG; OHS",
+     1
+    ],
+    [
+     "Y-029",
+     "Autodesk Revit",
+     "",
+     "Revit MEP; Revit Architecture",
+     0
+    ],
+    [
+     "Y-030",
+     "Tekla Structures",
+     "",
+     "Tekla",
+     0
+    ],
+    [
+     "Y-031",
+     "SAP2000",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-032",
+     "ETABS",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-033",
+     "IdeaStatiCa",
+     "IDEA StatiCa",
+     "",
+     0
+    ],
+    [
+     "Y-034",
+     "Civil 3D",
+     "Autodesk Civil 3D",
+     "",
+     0
+    ],
+    [
+     "Y-035",
+     "Netcad",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-036",
+     "Navisworks",
+     "Autodesk Navisworks",
+     "BIM koordinasyon",
+     0
+    ],
+    [
+     "Y-037",
+     "Primavera P6",
+     "Oracle Primavera P6",
+     "Primavera",
+     0
+    ],
+    [
+     "Y-038",
+     "MS Project",
+     "Microsoft Project",
+     "",
+     0
+    ]
+   ]
+  },
+  {
+   "n": "Elektronik, Otomasyon & Kontrol",
+   "t": [
+    [
+     "Y-039",
+     "Altium Designer",
+     "",
+     "Altium",
+     0
+    ],
+    [
+     "Y-040",
+     "KiCad",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-041",
+     "Autodesk Eagle",
+     "",
+     "Eagle",
+     0
+    ],
+    [
+     "Y-042",
+     "STM32 / ARM Cortex",
+     "STM32",
+     "STM32CubeIDE; ARM",
+     0
+    ],
+    [
+     "Y-043",
+     "Arduino",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-044",
+     "Raspberry Pi",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-045",
+     "VHDL / Verilog",
+     "",
+     "FPGA; Vivado; Quartus",
+     0
+    ],
+    [
+     "Y-046",
+     "LabVIEW",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-047",
+     "Proteus / LTspice",
+     "",
+     "devre simülasyonu",
+     0
+    ],
+    [
+     "Y-174",
+     "PCB tasarımı",
+     "PCB design",
+     "baskı devre",
+     1
+    ],
+    [
+     "Y-175",
+     "Analog & sayısal devre tasarımı",
+     "Circuit design",
+     "devre tasarımı",
+     1
+    ],
+    [
+     "Y-176",
+     "Güç elektroniği",
+     "Power electronics",
+     "invertör; konvertör",
+     1
+    ],
+    [
+     "Y-177",
+     "Gömülü yazılım",
+     "Embedded software",
+     "firmware; RTOS",
+     1
+    ],
+    [
+     "Y-178",
+     "Sensör & ölçüm sistemleri",
+     "Sensors & instrumentation",
+     "enstrümantasyon",
+     1
+    ],
+    [
+     "Y-179",
+     "RF & anten tasarımı",
+     "RF & antenna design",
+     "RF",
+     1
+    ],
+    [
+     "Y-180",
+     "Elektrik makineleri & sürücüler",
+     "Electrical machines & drives",
+     "motor sürücü",
+     1
+    ],
+    [
+     "Y-048",
+     "Siemens TIA Portal",
+     "",
+     "TIA; Step7",
+     0
+    ],
+    [
+     "Y-049",
+     "PLC programlama",
+     "PLC programming",
+     "ladder; PLC",
+     0
+    ],
+    [
+     "Y-050",
+     "CODESYS",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-051",
+     "SCADA / HMI",
+     "",
+     "WinCC; Ignition",
+     0
+    ],
+    [
+     "Y-052",
+     "ROS / ROS2",
+     "ROS",
+     "Robot Operating System",
+     0
+    ],
+    [
+     "Y-053",
+     "MATLAB & Simulink",
+     "",
+     "Matlab; Simulink",
+     0
+    ],
+    [
+     "Y-054",
+     "Endüstriyel haberleşme",
+     "Industrial protocols",
+     "CAN; Modbus; Profinet; MQTT",
+     0
+    ],
+    [
+     "Y-181",
+     "Kontrol sistemleri",
+     "Control systems",
+     "PID; kontrol teorisi",
+     1
+    ],
+    [
+     "Y-182",
+     "Mekatronik sistem tasarımı",
+     "Mechatronic system design",
+     "mekatronik",
+     1
+    ],
+    [
+     "Y-183",
+     "Robotik",
+     "Robotics",
+     "endüstriyel robot; kobot",
+     1
+    ],
+    [
+     "Y-184",
+     "Hidrolik & pnömatik",
+     "Hydraulics & pneumatics",
+     "",
+     1
+    ],
+    [
+     "Y-185",
+     "Endüstriyel otomasyon projelendirme",
+     "Industrial automation design",
+     "pano tasarımı",
+     1
+    ],
+    [
+     "Y-186",
+     "Otonom sistemler",
+     "Autonomous systems",
+     "SLAM; navigasyon",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Yazılım & Veri",
+   "t": [
+    [
+     "Y-070",
+     "SQL",
+     "",
+     "PostgreSQL; MySQL; MSSQL",
+     0
+    ],
+    [
+     "Y-071",
+     "Python veri analizi",
+     "Python data analysis",
+     "pandas; NumPy",
+     0
+    ],
+    [
+     "Y-072",
+     "R",
+     "",
+     "RStudio",
+     0
+    ],
+    [
+     "Y-073",
+     "Power BI",
+     "Microsoft Power BI",
+     "PowerBI",
+     0
+    ],
+    [
+     "Y-074",
+     "Tableau",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-075",
+     "İleri Excel & VBA",
+     "Advanced Excel & VBA",
+     "makro; Power Query; pivot",
+     0
+    ],
+    [
+     "Y-076",
+     "Minitab",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-077",
+     "SPSS / Stata / EViews",
+     "",
+     "ekonometri yazılımı",
+     0
+    ],
+    [
+     "Y-078",
+     "Makine öğrenmesi",
+     "Machine learning",
+     "ML; scikit-learn",
+     0
+    ],
+    [
+     "Y-079",
+     "Derin öğrenme",
+     "Deep learning",
+     "PyTorch; TensorFlow; DL",
+     0
+    ],
+    [
+     "Y-080",
+     "Bilgisayarlı görü",
+     "Computer vision",
+     "OpenCV; CV",
+     0
+    ],
+    [
+     "Y-081",
+     "Doğal dil işleme",
+     "Natural language processing",
+     "NLP; LLM",
+     0
+    ],
+    [
+     "Y-082",
+     "Veri mühendisliği",
+     "Data engineering",
+     "Spark; Airflow; ETL",
+     0
+    ],
+    [
+     "Y-083",
+     "Google Analytics 4",
+     "",
+     "GA4",
+     0
+    ],
+    [
+     "Y-055",
+     "Python",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-056",
+     "Java",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-057",
+     "C / C++",
+     "",
+     "C++; Cpp",
+     0
+    ],
+    [
+     "Y-058",
+     "C# / .NET",
+     "",
+     "dotnet; CSharp",
+     0
+    ],
+    [
+     "Y-059",
+     "JavaScript / TypeScript",
+     "",
+     "JS; TS",
+     0
+    ],
+    [
+     "Y-060",
+     "React",
+     "",
+     "React.js; Next.js",
+     0
+    ],
+    [
+     "Y-061",
+     "Node.js",
+     "",
+     "Express",
+     0
+    ],
+    [
+     "Y-062",
+     "Go",
+     "",
+     "Golang",
+     0
+    ],
+    [
+     "Y-063",
+     "Mobil geliştirme",
+     "Mobile development",
+     "Flutter; React Native; Swift; Kotlin",
+     0
+    ],
+    [
+     "Y-064",
+     "Git & sürüm kontrolü",
+     "Git",
+     "GitHub; GitLab; version control",
+     0
+    ],
+    [
+     "Y-065",
+     "Docker & Kubernetes",
+     "",
+     "K8s; konteyner",
+     0
+    ],
+    [
+     "Y-066",
+     "Bulut platformları",
+     "Cloud platforms",
+     "AWS; Azure; GCP",
+     0
+    ],
+    [
+     "Y-067",
+     "CI/CD",
+     "",
+     "Jenkins; GitHub Actions",
+     0
+    ],
+    [
+     "Y-068",
+     "REST API tasarımı",
+     "REST API design",
+     "API; GraphQL",
+     0
+    ],
+    [
+     "Y-069",
+     "Siber güvenlik & sızma testi",
+     "Cybersecurity / pentesting",
+     "pentest; SOC",
+     0
+    ]
+   ]
+  },
+  {
+   "n": "Tedarik Zinciri & Kurumsal Sistemler",
+   "t": [
+    [
+     "Y-094",
+     "SAP (genel)",
+     "SAP",
+     "SAP ERP",
+     0
+    ],
+    [
+     "Y-095",
+     "SAP FI-CO",
+     "",
+     "mali modül",
+     0
+    ],
+    [
+     "Y-096",
+     "SAP MM / PP",
+     "",
+     "malzeme; üretim modülü",
+     0
+    ],
+    [
+     "Y-097",
+     "Logo / Mikro / Netsis",
+     "",
+     "ön muhasebe programı",
+     0
+    ],
+    [
+     "Y-098",
+     "CRM sistemleri",
+     "CRM systems",
+     "Salesforce; HubSpot",
+     0
+    ],
+    [
+     "Y-099",
+     "Bloomberg Terminal",
+     "",
+     "Bloomberg",
+     0
+    ],
+    [
+     "Y-202",
+     "Tedarik zinciri yönetimi",
+     "Supply chain management",
+     "SCM",
+     1
+    ],
+    [
+     "Y-203",
+     "Satın alma & tedarikçi yönetimi",
+     "Procurement",
+     "satınalma",
+     1
+    ],
+    [
+     "Y-204",
+     "Stok & envanter yönetimi",
+     "Inventory management",
+     "stok kontrol",
+     1
+    ],
+    [
+     "Y-205",
+     "Depo tasarımı & operasyonu",
+     "Warehouse operations",
+     "depo yönetimi; WMS",
+     1
+    ],
+    [
+     "Y-206",
+     "Talep tahmini",
+     "Demand forecasting",
+     "forecast",
+     1
+    ],
+    [
+     "Y-207",
+     "Dış ticaret & Incoterms",
+     "Foreign trade & Incoterms",
+     "ihracat; ithalat",
+     1
+    ],
+    [
+     "Y-208",
+     "Gümrük mevzuatı",
+     "Customs regulations",
+     "gümrükleme",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Finans, Muhasebe & Hukuk",
+   "t": [
+    [
+     "Y-209",
+     "Finansal modelleme",
+     "Financial modeling",
+     "model kurma",
+     1
+    ],
+    [
+     "Y-210",
+     "Şirket değerleme",
+     "Valuation",
+     "DCF; çarpanlar; değerleme",
+     1
+    ],
+    [
+     "Y-211",
+     "Mali tablo analizi",
+     "Financial statement analysis",
+     "bilanço analizi",
+     1
+    ],
+    [
+     "Y-212",
+     "Bütçeleme & tahminleme",
+     "Budgeting & forecasting",
+     "bütçe",
+     1
+    ],
+    [
+     "Y-213",
+     "Maliyet muhasebesi",
+     "Cost accounting",
+     "maliyetlendirme",
+     1
+    ],
+    [
+     "Y-214",
+     "Genel muhasebe",
+     "General accounting",
+     "ön muhasebe",
+     1
+    ],
+    [
+     "Y-215",
+     "TFRS / UFRS",
+     "IFRS",
+     "TMS; UFRS",
+     1
+    ],
+    [
+     "Y-216",
+     "Bağımsız denetim",
+     "External audit",
+     "denetim",
+     1
+    ],
+    [
+     "Y-217",
+     "İç kontrol & iç denetim",
+     "Internal audit",
+     "iç kontrol",
+     1
+    ],
+    [
+     "Y-218",
+     "Vergi mevzuatı",
+     "Tax regulations",
+     "vergi",
+     1
+    ],
+    [
+     "Y-219",
+     "Kredi & risk analizi",
+     "Credit & risk analysis",
+     "risk yönetimi",
+     1
+    ],
+    [
+     "Y-220",
+     "Portföy yönetimi",
+     "Portfolio management",
+     "yatırım analizi",
+     1
+    ],
+    [
+     "Y-221",
+     "Yatırım fizibilitesi",
+     "Investment feasibility",
+     "fizibilite",
+     1
+    ],
+    [
+     "Y-241",
+     "KVKK & veri koruma",
+     "Data protection / GDPR",
+     "GDPR; KVKK",
+     1
+    ],
+    [
+     "Y-242",
+     "Sözleşme hukuku",
+     "Contract law",
+     "sözleşme incelemesi",
+     1
+    ],
+    [
+     "Y-243",
+     "Şirketler hukuku",
+     "Corporate law",
+     "ticaret hukuku",
+     1
+    ],
+    [
+     "Y-244",
+     "AB mevzuatı & fon programları",
+     "EU regulations & funds",
+     "Horizon; AB projeleri",
+     1
+    ],
+    [
+     "Y-245",
+     "Kamu ihale mevzuatı",
+     "Public procurement law",
+     "ihale",
+     1
+    ],
+    [
+     "Y-246",
+     "Uyum & regülasyon takibi",
+     "Compliance",
+     "compliance",
+     1
+    ],
+    [
+     "Y-247",
+     "Patent & fikri mülkiyet",
+     "Patents & IP",
+     "fikri mülkiyet",
+     1
+    ],
+    [
+     "Y-248",
+     "CE işaretlemesi & ürün standartları",
+     "CE marking & product standards",
+     "direktif; standart",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Pazarlama, Satış & İnsan Kaynakları",
+   "t": [
+    [
+     "Y-222",
+     "Dijital pazarlama",
+     "Digital marketing",
+     "performans pazarlama",
+     1
+    ],
+    [
+     "Y-223",
+     "SEO & SEM",
+     "",
+     "arama motoru optimizasyonu",
+     1
+    ],
+    [
+     "Y-224",
+     "Google Ads & Meta Ads",
+     "",
+     "reklam yönetimi",
+     1
+    ],
+    [
+     "Y-225",
+     "Sosyal medya yönetimi",
+     "Social media management",
+     "",
+     1
+    ],
+    [
+     "Y-226",
+     "İçerik pazarlaması",
+     "Content marketing",
+     "içerik üretimi",
+     1
+    ],
+    [
+     "Y-227",
+     "Marka yönetimi",
+     "Brand management",
+     "markalaşma",
+     1
+    ],
+    [
+     "Y-228",
+     "Pazar araştırması",
+     "Market research",
+     "anket; odak grup",
+     1
+    ],
+    [
+     "Y-229",
+     "Müşteri deneyimi & CRM",
+     "Customer experience & CRM",
+     "CX",
+     1
+    ],
+    [
+     "Y-230",
+     "E-ticaret operasyonu",
+     "E-commerce operations",
+     "pazaryeri yönetimi",
+     1
+    ],
+    [
+     "Y-231",
+     "Satış analitiği",
+     "Sales analytics",
+     "satış raporlama",
+     1
+    ],
+    [
+     "Y-232",
+     "Kategori & fiyatlandırma",
+     "Category & pricing",
+     "fiyatlandırma",
+     1
+    ],
+    [
+     "Y-233",
+     "İş geliştirme",
+     "Business development",
+     "BD",
+     1
+    ],
+    [
+     "Y-234",
+     "İşe alım & yetenek kazanımı",
+     "Talent acquisition",
+     "recruitment; işe alım",
+     1
+    ],
+    [
+     "Y-235",
+     "Bordro & özlük işleri",
+     "Payroll & personnel",
+     "özlük",
+     1
+    ],
+    [
+     "Y-236",
+     "Eğitim & gelişim",
+     "Learning & development",
+     "L&D",
+     1
+    ],
+    [
+     "Y-237",
+     "Performans yönetimi",
+     "Performance management",
+     "",
+     1
+    ],
+    [
+     "Y-238",
+     "İş analizi",
+     "Business analysis",
+     "süreç analizi; BA",
+     1
+    ],
+    [
+     "Y-239",
+     "Süreç iyileştirme",
+     "Process improvement",
+     "süreç haritalama",
+     1
+    ],
+    [
+     "Y-240",
+     "Organizasyonel davranış",
+     "Organizational behavior",
+     "",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Görsel, Dijital & Medya Tasarımı",
+   "t": [
+    [
+     "Y-106",
+     "Figma",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-107",
+     "Adobe XD",
+     "",
+     "XD",
+     0
+    ],
+    [
+     "Y-108",
+     "Sketch",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-109",
+     "Webflow",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-110",
+     "HTML & CSS",
+     "",
+     "web temelleri",
+     0
+    ],
+    [
+     "Y-264",
+     "UI tasarımı",
+     "UI design",
+     "arayüz tasarımı",
+     1
+    ],
+    [
+     "Y-265",
+     "UX araştırması",
+     "UX research",
+     "kullanılabilirlik araştırması",
+     1
+    ],
+    [
+     "Y-266",
+     "Wireframe & prototipleme",
+     "Wireframing & prototyping",
+     "akış şeması",
+     1
+    ],
+    [
+     "Y-267",
+     "Tasarım sistemi",
+     "Design system",
+     "component library",
+     1
+    ],
+    [
+     "Y-268",
+     "Kullanılabilirlik testi",
+     "Usability testing",
+     "kullanıcı testi",
+     1
+    ],
+    [
+     "Y-269",
+     "Erişilebilirlik",
+     "Accessibility",
+     "a11y; WCAG",
+     1
+    ],
+    [
+     "Y-270",
+     "Etkileşim tasarımı",
+     "Interaction design",
+     "IxD",
+     1
+    ],
+    [
+     "Y-100",
+     "Adobe Illustrator",
+     "",
+     "Illustrator; AI",
+     0
+    ],
+    [
+     "Y-101",
+     "Adobe Photoshop",
+     "",
+     "Photoshop; PS",
+     0
+    ],
+    [
+     "Y-102",
+     "Adobe InDesign",
+     "",
+     "InDesign",
+     0
+    ],
+    [
+     "Y-103",
+     "Adobe Lightroom",
+     "",
+     "Lightroom",
+     0
+    ],
+    [
+     "Y-104",
+     "Canva",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-105",
+     "Procreate",
+     "",
+     "dijital illüstrasyon",
+     0
+    ],
+    [
+     "Y-257",
+     "Marka kimliği tasarımı",
+     "Brand identity design",
+     "kurumsal kimlik; logo",
+     1
+    ],
+    [
+     "Y-258",
+     "Tipografi",
+     "Typography",
+     "",
+     1
+    ],
+    [
+     "Y-259",
+     "Editorial & yayın tasarımı",
+     "Editorial design",
+     "kitap; dergi tasarımı",
+     1
+    ],
+    [
+     "Y-260",
+     "İllüstrasyon",
+     "Illustration",
+     "çizim",
+     1
+    ],
+    [
+     "Y-261",
+     "Baskı öncesi hazırlık",
+     "Prepress",
+     "matbaa hazırlığı",
+     1
+    ],
+    [
+     "Y-262",
+     "Sanat yönetmenliği",
+     "Art direction",
+     "AD",
+     1
+    ],
+    [
+     "Y-263",
+     "Sunum & bilgi tasarımı",
+     "Presentation & information design",
+     "infografik",
+     1
+    ],
+    [
+     "Y-111",
+     "Adobe After Effects",
+     "",
+     "After Effects; AE",
+     0
+    ],
+    [
+     "Y-112",
+     "Adobe Premiere Pro",
+     "",
+     "Premiere",
+     0
+    ],
+    [
+     "Y-113",
+     "DaVinci Resolve",
+     "",
+     "renk düzenleme",
+     0
+    ],
+    [
+     "Y-114",
+     "Cinema 4D",
+     "",
+     "C4D",
+     0
+    ],
+    [
+     "Y-115",
+     "Unreal Engine",
+     "",
+     "UE5",
+     0
+    ],
+    [
+     "Y-116",
+     "Unity",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-117",
+     "Ableton Live / Logic Pro",
+     "",
+     "DAW; ses üretimi",
+     0
+    ],
+    [
+     "Y-271",
+     "Motion graphics",
+     "",
+     "hareketli grafik",
+     1
+    ],
+    [
+     "Y-272",
+     "3D modelleme & render",
+     "3D modeling & rendering",
+     "görselleştirme",
+     1
+    ],
+    [
+     "Y-273",
+     "Animasyon",
+     "Animation",
+     "2D animasyon; rigging",
+     1
+    ],
+    [
+     "Y-274",
+     "Kurgu & montaj",
+     "Video editing",
+     "video kurgu",
+     1
+    ],
+    [
+     "Y-275",
+     "Storyboard",
+     "Storyboarding",
+     "hikâye tahtası",
+     1
+    ],
+    [
+     "Y-276",
+     "Kamera & ışık",
+     "Cinematography & lighting",
+     "görüntü yönetmenliği",
+     1
+    ],
+    [
+     "Y-277",
+     "Ses tasarımı & miksaj",
+     "Sound design & mixing",
+     "ses kurgu",
+     1
+    ],
+    [
+     "Y-278",
+     "Fotoğrafçılık",
+     "Photography",
+     "ürün fotoğrafı; stüdyo",
+     1
+    ],
+    [
+     "Y-279",
+     "Retouch & renk düzenleme",
+     "Retouching & color grading",
+     "renk düzeltme",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Araştırma, Proje & Girişimcilik",
+   "t": [
+    [
+     "Y-280",
+     "Bilimsel literatür taraması",
+     "Literature review",
+     "literatür taraması",
+     1
+    ],
+    [
+     "Y-281",
+     "Deney tasarımı & laboratuvar",
+     "Experimental design",
+     "laboratuvar çalışması",
+     1
+    ],
+    [
+     "Y-282",
+     "Teknik dokümantasyon",
+     "Technical documentation",
+     "rapor; kılavuz",
+     1
+    ],
+    [
+     "Y-283",
+     "TUBITAK proje başvurusu",
+     "R&D grant applications",
+     "TEYDEB; 2209; Ar-Ge teşvik",
+     1
+    ],
+    [
+     "Y-284",
+     "Akademik yayın & bildiri",
+     "Academic publishing",
+     "makale; konferans bildirisi",
+     1
+    ],
+    [
+     "Y-285",
+     "Ekonometrik analiz",
+     "Econometric analysis",
+     "regresyon; zaman serisi",
+     1
+    ],
+    [
+     "Y-286",
+     "Politika & sektör analizi",
+     "Policy & sector analysis",
+     "sektör raporu",
+     1
+    ],
+    [
+     "Y-118",
+     "Jira",
+     "Atlassian Jira",
+     "Confluence",
+     0
+    ],
+    [
+     "Y-119",
+     "Notion",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-120",
+     "Trello / Asana",
+     "",
+     "",
+     0
+    ],
+    [
+     "Y-121",
+     "Microsoft 365",
+     "",
+     "Office; Teams",
+     0
+    ],
+    [
+     "Y-122",
+     "Google Workspace",
+     "",
+     "Google Docs; Sheets",
+     0
+    ],
+    [
+     "Y-287",
+     "Proje yönetimi",
+     "Project management",
+     "PMP; proje planlama",
+     1
+    ],
+    [
+     "Y-288",
+     "Agile & Scrum",
+     "",
+     "scrum; kanban",
+     1
+    ],
+    [
+     "Y-289",
+     "Risk yönetimi",
+     "Risk management",
+     "",
+     1
+    ],
+    [
+     "Y-290",
+     "Paydaş yönetimi",
+     "Stakeholder management",
+     "",
+     1
+    ],
+    [
+     "Y-291",
+     "İş modeli & iş planı",
+     "Business model & business plan",
+     "iş planı; canvas",
+     1
+    ],
+    [
+     "Y-292",
+     "Girişimcilik & yatırımcı sunumu",
+     "Entrepreneurship & pitching",
+     "pitch deck; startup",
+     1
+    ],
+    [
+     "Y-293",
+     "Ürün yönetimi",
+     "Product management",
+     "PM; yol haritası",
+     1
+    ]
+   ]
+  },
+  {
+   "n": "Dil, Çalışma Biçimi & Takım Deneyimi",
+   "t": [
+    [
+     "Y-309",
+     "Formula Student",
+     "",
+     "FSAE; Formula 1",
+     2
+    ],
+    [
+     "Y-310",
+     "Baja SAE",
+     "",
+     "offroad takımı",
+     2
+    ],
+    [
+     "Y-311",
+     "TEKNOFEST",
+     "",
+     "teknofest yarışması",
+     2
+    ],
+    [
+     "Y-312",
+     "TUBITAK Efficiency Challenge",
+     "Efficiency Challenge",
+     "elektrikli araç yarışı",
+     2
+    ],
+    [
+     "Y-313",
+     "Robotik takım",
+     "Robotics team",
+     "robot yarışması",
+     2
+    ],
+    [
+     "Y-314",
+     "Öğrenci kulübü yöneticiliği",
+     "Student club leadership",
+     "kulüp yönetim kurulu",
+     2
+    ],
+    [
+     "Y-315",
+     "Bitirme projesi",
+     "Capstone project",
+     "lisans bitirme projesi",
+     2
+    ],
+    [
+     "Y-316",
+     "Önceki staj deneyimi",
+     "Prior internship",
+     "staj deneyimi",
+     2
+    ],
+    [
+     "Y-303",
+     "Takım çalışması",
+     "Teamwork",
+     "ekip çalışması",
+     2
+    ],
+    [
+     "Y-304",
+     "Analitik düşünme",
+     "Analytical thinking",
+     "problem çözme",
+     2
+    ],
+    [
+     "Y-305",
+     "Zaman yönetimi",
+     "Time management",
+     "önceliklendirme",
+     2
+    ],
+    [
+     "Y-306",
+     "Öğrenme çevikliği",
+     "Learning agility",
+     "hızlı öğrenme",
+     2
+    ],
+    [
+     "Y-307",
+     "Liderlik & ekip yönetimi",
+     "Leadership",
+     "takım liderliği",
+     2
+    ],
+    [
+     "Y-308",
+     "Saha & vardiya deneyimi",
+     "Field / shift experience",
+     "şantiye; üretim sahası",
+     2
+    ],
+    [
+     "Y-294",
+     "İngilizce (teknik)",
+     "English (technical)",
+     "teknik İngilizce",
+     2
+    ],
+    [
+     "Y-295",
+     "Almanca",
+     "German",
+     "Deutsch",
+     2
+    ],
+    [
+     "Y-296",
+     "Fransızca",
+     "French",
+     "",
+     2
+    ],
+    [
+     "Y-297",
+     "İspanyolca",
+     "Spanish",
+     "",
+     2
+    ],
+    [
+     "Y-298",
+     "Arapça",
+     "Arabic",
+     "",
+     2
+    ],
+    [
+     "Y-299",
+     "Rusça",
+     "Russian",
+     "",
+     2
+    ],
+    [
+     "Y-300",
+     "Sunum yapma",
+     "Presentation skills",
+     "sunum becerisi",
+     2
+    ],
+    [
+     "Y-301",
+     "Rapor & teknik yazım",
+     "Report writing",
+     "raporlama",
+     2
+    ],
+    [
+     "Y-302",
+     "Müşteri & tedarikçi iletişimi",
+     "Client communication",
+     "müşteri ilişkileri",
+     2
+    ]
+   ]
+  }
+ ],
+ "s": [
+  {
+   "n": "Üretim & Sanayi",
+   "t": [
+    [
+     "S-001",
+     "Otomotiv",
+     "otomotiv yan sanayi; OEM"
+    ],
+    [
+     "S-002",
+     "Beyaz eşya & dayanıklı tüketim",
+     "ev aletleri"
+    ],
+    [
+     "S-003",
+     "Havacılık & uzay",
+     "aviyonik; uzay"
+    ],
+    [
+     "S-004",
+     "Savunma sanayi",
+     "defence"
+    ],
+    [
+     "S-005",
+     "Raylı sistemler",
+     "demiryolu"
+    ],
+    [
+     "S-006",
+     "Gemi & denizcilik",
+     "tersane"
+    ],
+    [
+     "S-007",
+     "Makine imalat",
+     "makine sanayi"
+    ],
+    [
+     "S-008",
+     "HVAC & iklimlendirme",
+     "ısıtma soğutma havalandırma"
+    ],
+    [
+     "S-009",
+     "Elektrik-elektronik & yarı iletken",
+     "elektronik üretim"
+    ],
+    [
+     "S-010",
+     "Demir-çelik & metalurji",
+     "metal sanayi"
+    ],
+    [
+     "S-011",
+     "Kimya & boya",
+     "kimya sanayi"
+    ],
+    [
+     "S-012",
+     "Plastik & ambalaj",
+     "ambalaj sanayi"
+    ],
+    [
+     "S-013",
+     "Tekstil & hazır giyim",
+     "konfeksiyon"
+    ],
+    [
+     "S-014",
+     "Gıda & içecek",
+     "gıda sanayi; FMCG üretim"
+    ],
+    [
+     "S-015",
+     "İlaç & medikal cihaz",
+     "sağlık teknolojileri"
+    ],
+    [
+     "S-016",
+     "Mobilya & iç mekân ürünleri",
+     "mobilya sanayi"
+    ],
+    [
+     "S-017",
+     "Çimento & yapı malzemeleri",
+     "yapı malzemesi"
+    ]
+   ]
+  },
+  {
+   "n": "Altyapı & Enerji",
+   "t": [
+    [
+     "S-018",
+     "İnşaat & taahhüt",
+     "müteahhitlik"
+    ],
+    [
+     "S-019",
+     "Gayrimenkul & GYO",
+     "emlak geliştirme"
+    ],
+    [
+     "S-020",
+     "Enerji üretim & dağıtım",
+     "elektrik üretimi"
+    ],
+    [
+     "S-021",
+     "Yenilenebilir enerji",
+     "güneş; rüzgâr; GES; RES"
+    ],
+    [
+     "S-022",
+     "Petrol & doğalgaz",
+     "rafineri; petrokimya"
+    ],
+    [
+     "S-023",
+     "Su & atık yönetimi",
+     "arıtma; geri dönüşüm"
+    ],
+    [
+     "S-024",
+     "Altyapı & ulaştırma",
+     "kentsel altyapı"
+    ]
+   ]
+  },
+  {
+   "n": "Teknoloji & Hizmet",
+   "t": [
+    [
+     "S-025",
+     "Yazılım & bilişim",
+     "IT; bilgi teknolojileri"
+    ],
+    [
+     "S-026",
+     "Telekomünikasyon",
+     "telekom; operatör"
+    ],
+    [
+     "S-027",
+     "E-ticaret",
+     "online perakende; pazaryeri"
+    ],
+    [
+     "S-028",
+     "Fintech",
+     "finansal teknoloji; ödeme sistemleri"
+    ],
+    [
+     "S-029",
+     "Oyun",
+     "oyun stüdyosu; gaming"
+    ],
+    [
+     "S-030",
+     "Yapay zekâ & veri",
+     "AI; veri bilimi şirketi"
+    ],
+    [
+     "S-031",
+     "Siber güvenlik",
+     "güvenlik teknolojileri"
+    ],
+    [
+     "S-032",
+     "Startup & girişimcilik",
+     "erken aşama girişim"
+    ]
+   ]
+  },
+  {
+   "n": "Finans & Danışmanlık",
+   "t": [
+    [
+     "S-033",
+     "Bankacılık",
+     "banka"
+    ],
+    [
+     "S-034",
+     "Sigorta & bireysel emeklilik",
+     "sigortacılık; BES"
+    ],
+    [
+     "S-035",
+     "Sermaye piyasaları & yatırım",
+     "aracı kurum; portföy yönetim"
+    ],
+    [
+     "S-036",
+     "Bağımsız denetim",
+     "Big 4; denetim şirketi"
+    ],
+    [
+     "S-037",
+     "Yönetim danışmanlığı",
+     "strateji danışmanlığı"
+    ],
+    [
+     "S-038",
+     "Hukuk & uyum",
+     "hukuk bürosu"
+    ]
+   ]
+  },
+  {
+   "n": "Ticaret & Lojistik",
+   "t": [
+    [
+     "S-039",
+     "Perakende",
+     "mağazacılık"
+    ],
+    [
+     "S-040",
+     "Hızlı tüketim (FMCG)",
+     "FMCG"
+    ],
+    [
+     "S-041",
+     "Lojistik & tedarik zinciri",
+     "taşımacılık; 3PL"
+    ],
+    [
+     "S-042",
+     "Dış ticaret & gümrük",
+     "ihracat; ithalat"
+    ],
+    [
+     "S-043",
+     "Havayolu & turizm",
+     "havacılık hizmetleri; otelcilik"
+    ]
+   ]
+  },
+  {
+   "n": "Yaratıcı & İletişim",
+   "t": [
+    [
+     "S-044",
+     "Reklam & marka ajansı",
+     "reklam ajansı"
+    ],
+    [
+     "S-045",
+     "Dijital ajans",
+     "performans ajansı"
+    ],
+    [
+     "S-046",
+     "Medya & yayıncılık",
+     "TV; radyo; dijital yayın"
+    ],
+    [
+     "S-047",
+     "Yayınevi & basım",
+     "matbaa; kitap"
+    ],
+    [
+     "S-048",
+     "Sinema, animasyon & post prodüksiyon",
+     "prodüksiyon"
+    ],
+    [
+     "S-049",
+     "Müzik & ses",
+     "müzik prodüksiyonu"
+    ],
+    [
+     "S-050",
+     "Sanat kurumu, müze & galeri",
+     "kültür kurumu"
+    ],
+    [
+     "S-051",
+     "Etkinlik & fuar",
+     "organizasyon; fuarcılık"
+    ]
+   ]
+  },
+  {
+   "n": "Kamu & Üçüncü Sektör",
+   "t": [
+    [
+     "S-052",
+     "Kamu kurumu & belediye",
+     "kamu"
+    ],
+    [
+     "S-053",
+     "Üniversite & araştırma merkezi",
+     "TUBITAK; TUBITAK MAM; Ar-Ge merkezi"
+    ],
+    [
+     "S-054",
+     "STK & vakıf",
+     "dernek; vakıf"
+    ],
+    [
+     "S-055",
+     "Uluslararası kuruluş",
+     "AB; BM"
+    ]
+   ]
+  }
+ ]
+}
