@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAKTEK Stajyerleri</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -18,11 +18,11 @@
   --radius:10px;--radius-lg:16px;--shadow:0 1px 3px rgba(0,0,0,0.08);
 }
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.6}
-h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
+h1,h2,h3{font-family:'DM Sans',sans-serif;font-weight:400}
 
 /* NAV */
 .nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
-.nav-brand{font-family:'DM Serif Display',serif;font-size:22px;color:var(--accent);letter-spacing:-0.5px}
+.nav-brand{font-family:'DM Sans',sans-serif;font-size:22px;color:var(--accent);letter-spacing:-0.5px}
 .nav-brand span{color:var(--text)}
 .nav-tabs{display:flex;gap:4px}
 .nav-tab{padding:6px 16px;border-radius:var(--radius);font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text2);transition:all 0.15s}
@@ -165,14 +165,14 @@ h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
 .internship-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:650px){.internship-grid{grid-template-columns:1fr}}
 .company-name{font-size:12px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px}
-.internship-title{font-size:18px;font-family:'DM Serif Display',serif;margin-bottom:8px}
+.internship-title{font-size:18px;font-family:'DM Sans',sans-serif;margin-bottom:8px}
 .internship-desc{font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.5}
 
 /* STUDENT CARDS */
 .student-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;box-shadow:var(--shadow)}
 .student-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:650px){.student-grid{grid-template-columns:1fr}}
-.student-avatar{width:48px;height:48px;border-radius:50%;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:18px;font-family:'DM Serif Display',serif;flex-shrink:0}
+.student-avatar{width:48px;height:48px;border-radius:50%;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:18px;font-family:'DM Sans',sans-serif;flex-shrink:0}
 .student-header{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
 .student-name{font-weight:500;font-size:16px}
 .student-meta{font-size:13px;color:var(--text2)}
@@ -242,7 +242,7 @@ h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
 
 <!-- NAV -->
 <nav class="nav">
-  <div class="nav-brand">Intern<span>Link</span></div>
+  <div class="nav-brand">YTÜMAKTEK <span>Staj Portalı</span></div>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('home')">Home</button>
     <button class="nav-tab" onclick="showPage('student')">Student</button>
@@ -287,6 +287,7 @@ h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
     <div style="margin-bottom:2rem">
       <h1 style="font-size:32px;margin-bottom:6px">Create your profile</h1>
       <p style="color:var(--text2)">Set up your student profile to start matching with internships.</p>
+      <p style="font-size:13px;color:var(--text2);margin-top:8px">Zaten hesabın var mı? <a href="#" onclick="showStudentView('login');return false;">Giriş yap</a></p>
     </div>
 
     <div class="card">
@@ -300,6 +301,12 @@ h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
           <div class="form-group">
             <label class="form-label">Email address *</label>
             <input class="form-input" id="s-email" type="email" placeholder="ayse@university.edu">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input class="form-input" id="s-password" type="password" placeholder="En az 8 karakter" minlength="8" autocomplete="new-password">
           </div>
         </div>
         <div class="form-row">
@@ -388,6 +395,43 @@ h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
     </div>
   </div>
 
+  <!-- STUDENT LOGIN -->
+  <div id="student-login" class="container" style="max-width:420px;display:none">
+    <div style="margin-bottom:2rem">
+      <h1 style="font-size:32px;margin-bottom:6px">Giriş yap</h1>
+      <p style="color:var(--text2)">Hesabına giriş yaparak başvurularına devam et.</p>
+      <p style="font-size:13px;color:var(--text2);margin-top:8px">Hesabın yok mu? <a href="#" onclick="showStudentView('register');return false;">Kayıt ol</a></p>
+    </div>
+    <div class="card">
+      <div class="form-group">
+        <label class="form-label">Email address</label>
+        <input class="form-input" id="l-email" type="email" placeholder="ayse@university.edu">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input class="form-input" id="l-password" type="password" placeholder="Şifren" autocomplete="current-password">
+      </div>
+      <div id="login-success" class="alert alert-success" style="display:none"></div>
+      <div id="login-error" class="alert alert-info" style="display:none"></div>
+      <div id="login-resend" style="display:none;margin-bottom:12px">
+        <a href="#" onclick="resendVerification();return false;">Doğrulama e-postasını tekrar gönder</a>
+      </div>
+      <button class="btn btn-primary" onclick="loginStudent()" style="width:100%;justify-content:center;padding:12px">
+        Giriş yap →
+      </button>
+    </div>
+  </div>
+
+  <!-- STUDENT VERIFY NOTICE -->
+  <div id="student-verify-notice" class="container" style="max-width:420px;display:none">
+    <div class="card" style="text-align:center">
+      <div style="font-size:32px;margin-bottom:8px">📧</div>
+      <h1 style="font-size:24px;margin-bottom:8px">E-postanı doğrula</h1>
+      <p style="color:var(--text2);margin-bottom:16px">Sana bir doğrulama linki gönderdik. Kayıt işlemini tamamlamak için gelen kutunu kontrol et.</p>
+      <a href="#" onclick="showStudentView('login');return false;">Giriş sayfasına dön</a>
+    </div>
+  </div>
+
   <!-- STUDENT DASHBOARD -->
   <div id="student-dashboard" style="display:none">
     <div class="container wide">
@@ -396,7 +440,7 @@ h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}
           <h1 style="font-size:28px;margin-bottom:2px" id="dash-welcome">Welcome back</h1>
           <p style="color:var(--text2);font-size:14px">Here are internships matched to your skills.</p>
         </div>
-        <button class="btn btn-outline btn-sm" onclick="editProfile()">Edit profile</button>
+        <button class="btn btn-outline btn-sm" onclick="logoutStudent()">Log out</button>
       </div>
 
       <div id="applied-alert" class="alert alert-success" style="display:none"></div>
@@ -499,31 +543,33 @@ const INTERNSHIPS = [
   }
 ];
 
-// Sample applicants pre-loaded
-const SAMPLE_STUDENTS = [
-  {id:'s0',name:'Mehmet Yılmaz',email:'mehmet@itu.edu.tr',phone:'+90 532 111 2233',university:'İTÜ',dept:'Mechanical Engineering',year:'3rd Year',tags:['HVAC','mechanical engineering','analysis','CAD'],experience:'Completed a CAD project on HVAC duct design. Part of the engineering society.',cvName:'mehmet_cv.pdf',cvData:null,appliedTo:['hvac']},
-  {id:'s1',name:'Zeynep Arslan',email:'zeynep@metu.edu.tr',phone:'+90 533 222 4455',university:'ODTÜ',dept:'Materials Science',year:'4th Year',tags:['materials','analysis','individual work','manufacturing'],experience:'Laboratory experience in material characterization. Published a short paper on composite analysis.',cvName:'zeynep_cv.pdf',cvData:null,appliedTo:['materials']},
-  {id:'s2',name:'Can Öztürk',email:'can@bilkent.edu.tr',phone:'+90 534 333 6677',university:'Bilkent',dept:'Electrical Engineering',year:'2nd Year',tags:['electrical','workshop','teamwork','maintenance'],experience:'Workshop assistant in university lab. Familiar with basic circuit testing and assembly.',cvName:'can_cv.pdf',cvData:null,appliedTo:['workshop']},
-  {id:'s3',name:'Elif Şahin',email:'elif@boun.edu.tr',phone:'+90 535 444 8899',university:'Boğaziçi',dept:'Mechanical Engineering',year:'3rd Year',tags:['mechanical engineering','HVAC','teamwork','workshop'],experience:'Internship at a local HVAC installer. Helped with on-site measurements and documentation.',cvName:'elif_cv.pdf',cvData:null,appliedTo:['hvac','workshop']}
-];
-
-// Load from storage or use samples
-let students = JSON.parse(localStorage.getItem('il_students') || 'null') || SAMPLE_STUDENTS;
-let currentStudent = JSON.parse(localStorage.getItem('il_current') || 'null');
+// Backend-driven state - student accounts now live in Postgres, not localStorage,
+// so the same email can no longer register more than once (see server/).
+let currentStudent = null;
 let cvFile = null;
 let companyView = 'all';
 let companyFilterTags = [];
+let companyStudents = []; // populated from /api/company/applicants when the company tab opens
 
-// Init sample applicants into internships
-function buildApplicantLists(){
+function buildApplicantLists(list){
   INTERNSHIPS.forEach(i => {
-    i.applicants = students.filter(s => s.appliedTo && s.appliedTo.includes(i.id)).map(s => s.id);
+    i.applicants = list.filter(s => s.appliedTo && s.appliedTo.includes(i.id)).map(s => s.id);
   });
 }
 
-function save(){
-  localStorage.setItem('il_students', JSON.stringify(students));
-  if(currentStudent) localStorage.setItem('il_current', JSON.stringify(currentStudent));
+// Fetches the logged-in student's profile + applications from the API.
+// Sets currentStudent to null if there is no valid session.
+async function refreshCurrentStudent(){
+  try{
+    const meRes = await fetch('/api/auth/me', {credentials:'include'});
+    if(!meRes.ok){ currentStudent = null; return; }
+    const me = await meRes.json();
+    const appsRes = await fetch('/api/applications/me', {credentials:'include'});
+    const apps = appsRes.ok ? await appsRes.json() : {appliedTo:[]};
+    currentStudent = {...me.student, appliedTo: apps.appliedTo};
+  } catch {
+    currentStudent = null;
+  }
 }
 
 // PAGES
@@ -540,13 +586,25 @@ function showPage(p){
 }
 
 // STUDENT INIT
-function initStudentPage(){
+async function initStudentPage(){
+  await refreshCurrentStudent();
   if(currentStudent){
     showDashboard();
   } else {
-    document.getElementById('student-register').style.display='';
-    document.getElementById('student-dashboard').style.display='none';
+    showStudentView('register');
   }
+}
+
+// Switches between the 4 student-tab views: register, login, verify-notice, dashboard.
+function showStudentView(view){
+  const views = {
+    register: 'student-register',
+    login: 'student-login',
+    verify: 'student-verify-notice',
+    dashboard: 'student-dashboard',
+  };
+  Object.values(views).forEach(id => { document.getElementById(id).style.display = 'none'; });
+  document.getElementById(views[view]).style.display = '';
 }
 
 // SKILL & SECTOR PICKER (mtk, v2) - from etiket-secici.html, adapted to reuse in this file
@@ -850,9 +908,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
   buildCompanyFilterTags();
-  buildApplicantLists();
-  if(currentStudent) showDashboard();
+
+  // Coming back from the verification email link (server redirects to /?verified=1).
+  if(new URLSearchParams(location.search).get('verified')==='1'){
+    history.replaceState(null, '', location.pathname);
+    showPageByName('student');
+    showStudentView('login');
+    const el = document.getElementById('login-success');
+    el.textContent = '✓ E-postan doğrulandı. Şimdi giriş yapabilirsin.';
+    el.style.display = '';
+  }
 });
+
+// Navigates to a page without relying on a click event (for programmatic navigation).
+function showPageByName(p){
+  document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  const tabs = document.querySelectorAll('.nav-tab');
+  const names = ['home','student','company'];
+  tabs.forEach((t,i) => {if(names[i]===p) t.classList.add('active')});
+  if(p==='student') initStudentPage();
+  if(p==='company') initCompanyPage();
+}
 
 function handleFile(e){
   const f = e.target.files[0];
@@ -878,9 +956,10 @@ function processFile(f){
 }
 
 // REGISTER
-function registerStudent(){
+async function registerStudent(){
   const name = document.getElementById('s-name').value.trim();
   const email = document.getElementById('s-email').value.trim();
+  const password = document.getElementById('s-password').value;
   const phone = document.getElementById('s-phone').value.trim();
   const uni = document.getElementById('s-university').value.trim();
   const dept = document.getElementById('s-dept').value.trim();
@@ -890,9 +969,14 @@ function registerStudent(){
   const exp = document.getElementById('s-experience').value.trim();
   const err = document.getElementById('form-error');
 
-  if(!name||!email||!uni||!dept||!year){
+  if(!name||!email||!password||!uni||!dept||!year){
     err.style.display='';
-    err.textContent='Please fill in all required fields (name, email, university, department, year).';
+    err.textContent='Please fill in all required fields (name, email, password, university, department, year).';
+    return;
+  }
+  if(password.length<8){
+    err.style.display='';
+    err.textContent='Password must be at least 8 characters.';
     return;
   }
   if(tags.length===0){
@@ -908,42 +992,117 @@ function registerStudent(){
 
   err.style.display='none';
 
-  const reader = new FileReader();
-  reader.onload = function(e){
-    const student = {
-      id: 'u'+Date.now(),
-      name, email, phone, university:uni, dept, year, tags, sektorler, experience:exp,
-      cvName: cvFile.name,
-      cvData: e.target.result,
-      appliedTo: []
-    };
-    students.push(student);
-    currentStudent = student;
-    save();
-    buildApplicantLists();
-    showDashboard();
-  };
-  reader.readAsDataURL(cvFile);
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('password', password);
+  formData.append('phone', phone);
+  formData.append('university', uni);
+  formData.append('dept', dept);
+  formData.append('year', year);
+  formData.append('tags', JSON.stringify(tags));
+  formData.append('sektorler', JSON.stringify(sektorler));
+  formData.append('experience', exp);
+  formData.append('cv', cvFile);
+
+  let res;
+  try{
+    res = await fetch('/api/auth/signup', {method:'POST', body:formData, credentials:'include'});
+  } catch {
+    err.style.display='';
+    err.textContent='Sunucuya ulaşılamadı. Lütfen tekrar dene.';
+    return;
+  }
+
+  if(res.status===409){
+    err.style.display='';
+    err.textContent='Bu e-posta ile zaten bir hesap var. Giriş yapmayı dene.';
+    return;
+  }
+  if(!res.ok){
+    err.style.display='';
+    err.textContent='Kayıt sırasında bir hata oluştu. Lütfen tekrar dene.';
+    return;
+  }
+
+  showStudentView('verify');
 }
 
-function editProfile(){
+// LOGIN
+async function loginStudent(){
+  const email = document.getElementById('l-email').value.trim();
+  const password = document.getElementById('l-password').value;
+  const err = document.getElementById('login-error');
+  const resend = document.getElementById('login-resend');
+  err.style.display='none';
+  resend.style.display='none';
+
+  if(!email||!password){
+    err.style.display='';
+    err.textContent='Lütfen e-posta ve şifreni gir.';
+    return;
+  }
+
+  let res;
+  try{
+    res = await fetch('/api/auth/login', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      credentials:'include',
+      body: JSON.stringify({email, password}),
+    });
+  } catch {
+    err.style.display='';
+    err.textContent='Sunucuya ulaşılamadı. Lütfen tekrar dene.';
+    return;
+  }
+
+  if(res.status===403){
+    err.style.display='';
+    err.textContent='E-postanı henüz doğrulamadın.';
+    resend.style.display='';
+    return;
+  }
+  if(!res.ok){
+    err.style.display='';
+    err.textContent='E-posta veya şifre hatalı.';
+    return;
+  }
+
+  await refreshCurrentStudent();
+  showDashboard();
+}
+
+async function resendVerification(){
+  const email = document.getElementById('l-email').value.trim();
+  if(!email) return;
+  await fetch('/api/auth/resend-verification', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({email}),
+  });
+  const err = document.getElementById('login-error');
+  err.style.display='';
+  err.textContent='Hesabın varsa ve doğrulanmamışsa, sana yeni bir doğrulama e-postası gönderdik.';
+}
+
+async function logoutStudent(){
+  try{
+    await fetch('/api/auth/logout', {method:'POST', credentials:'include'});
+  } catch { /* cookie may already be gone; proceed to reset the UI regardless */ }
   currentStudent = null;
-  localStorage.removeItem('il_current');
-  document.getElementById('student-dashboard').style.display='none';
-  document.getElementById('student-register').style.display='';
   if(skillPicker) skillPicker.reset();
   if(sectorPicker) sectorPicker.reset();
   cvFile = null;
   document.getElementById('cv-file').value='';
   document.getElementById('upload-success').style.display='none';
   document.getElementById('upload-area').classList.remove('has-file');
+  showStudentView('login');
 }
 
 // DASHBOARD
 function showDashboard(){
-  document.getElementById('student-register').style.display='none';
-  const dash = document.getElementById('student-dashboard');
-  dash.style.display='';
+  showStudentView('dashboard');
   document.getElementById('dash-welcome').textContent='Welcome, '+currentStudent.name.split(' ')[0]+'!';
   renderInternships();
 }
@@ -1014,16 +1173,17 @@ function closeModal(){
   document.getElementById('internship-modal').classList.remove('open');
 }
 
-function applyToInternship(internId){
+async function applyToInternship(internId){
   if(!currentStudent) return;
-  if(!currentStudent.appliedTo) currentStudent.appliedTo=[];
-  if(!currentStudent.appliedTo.includes(internId)){
-    currentStudent.appliedTo.push(internId);
-    // Also update in students array
-    const idx = students.findIndex(s => s.id===currentStudent.id);
-    if(idx>-1) students[idx] = currentStudent;
-    save();
-    buildApplicantLists();
+  const res = await fetch('/api/applications', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    credentials:'include',
+    body: JSON.stringify({internshipId: internId}),
+  });
+  if(res.ok){
+    const data = await res.json();
+    currentStudent.appliedTo = data.appliedTo;
   }
   closeModal();
   const alert = document.getElementById('applied-alert');
@@ -1035,7 +1195,16 @@ function applyToInternship(internId){
 }
 
 // COMPANY PAGE
-function initCompanyPage(){
+async function initCompanyPage(){
+  const container = document.getElementById('company-applicants');
+  if(container) container.innerHTML = `<div class="empty"><p>Loading applicants…</p></div>`;
+  try{
+    const res = await fetch('/api/company/applicants', {credentials:'include'});
+    const data = res.ok ? await res.json() : {students:[]};
+    companyStudents = data.students;
+  } catch {
+    companyStudents = [];
+  }
   buildCompanyFilterTags();
   renderApplicants();
 }
@@ -1076,9 +1245,9 @@ function setCompanyView(v){
 function renderApplicants(){
   const container = document.getElementById('company-applicants');
   if(!container) return;
-  buildApplicantLists();
+  buildApplicantLists(companyStudents);
 
-  let list = students.filter(s => s.appliedTo && s.appliedTo.length>0);
+  let list = companyStudents.filter(s => s.appliedTo && s.appliedTo.length>0);
 
   if(companyView!=='all'){
     list = list.filter(s => s.appliedTo.includes(companyView));
@@ -1115,7 +1284,7 @@ function renderApplicants(){
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
         <button class="btn btn-outline btn-sm" onclick="viewStudent('${student.id}')">View profile →</button>
-        ${student.cvData?`<button class="btn btn-sm" style="background:var(--accent-light);color:var(--accent);border:1px solid #BDCDF7" onclick="downloadCV('${student.id}')">📄 Download CV</button>`:'<span style="font-size:12px;color:var(--text3)">No CV</span>'}
+        ${student.cvName?`<button class="btn btn-sm" style="background:var(--accent-light);color:var(--accent);border:1px solid #BDCDF7" onclick="downloadCV('${student.id}')">📄 Download CV</button>`:'<span style="font-size:12px;color:var(--text3)">No CV</span>'}
       </div>
     `;
     grid.appendChild(card);
@@ -1123,7 +1292,7 @@ function renderApplicants(){
 }
 
 function viewStudent(id){
-  const s = students.find(x => x.id===id);
+  const s = companyStudents.find(x => x.id===id);
   if(!s) return;
   const initials = s.name.split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
   const apps = INTERNSHIPS.filter(i => s.appliedTo && s.appliedTo.includes(i.id));
@@ -1153,7 +1322,7 @@ function viewStudent(id){
     <div class="divider"></div>
     <div>
       <div class="form-label">CV</div>
-      ${s.cvData?`<button class="cv-link" onclick="downloadCV('${s.id}')">📄 ${s.cvName} — Download</button>`:'<span style="color:var(--text3);font-size:13px">No CV uploaded</span>'}
+      ${s.cvName?`<button class="cv-link" onclick="downloadCV('${s.id}')">📄 ${s.cvName} — Download</button>`:'<span style="color:var(--text3);font-size:13px">No CV uploaded</span>'}
     </div>
   `;
   document.getElementById('student-modal').classList.add('open');
@@ -1164,11 +1333,8 @@ function closeSModal(){
 }
 
 function downloadCV(id){
-  const s = students.find(x => x.id===id);
-  if(!s || !s.cvData) return;
   const a = document.createElement('a');
-  a.href = s.cvData;
-  a.download = s.cvName;
+  a.href = '/api/company/cv/'+id;
   a.click();
 }
 

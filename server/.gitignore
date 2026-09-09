@@ -1,0 +1,4 @@
+node_modules/
+.env
+uploads/cvs/*
+!uploads/cvs/.gitkeep
